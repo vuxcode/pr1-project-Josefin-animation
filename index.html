@@ -1,7 +1,36 @@
 <!-- Start writing your project code in this file! -->
+ <!--creates buttons-->
+<button id="1st">Option 1</button>
+<button id="2nd">Option 2</button>
+<button id="3rd">Option 3</button>
 
-<button id="1st">Choice no 1</button>
-<button id="2nd">Choice no 2</button>
-<button id="3rd">Choice no 3</button>
+<script>
+//creates a variable for the button that is recognized by the id "1st"
+var myButton = document.getElementById("1st");
+//connect the buttons to the function so it actually does something
+myButton.addEventListener("click", Option1);
+
+//creates a function so the pc knows what to do when the button is pressed
+function Option1() {
+    alert("This is dialogue no 1")
+    console.log()
+}
+
+//repeat of the previous step
+var myButton = document.getElementById("2nd");
+myButton.addEventListener("click", Option2);
+function Option2() {
+    alert("This is dialogue no 2")
+    console.log()
+}
+
+//repeat of the previous step
+var myButton = document.getElementById("3rd");
+myButton.addEventListener("click", Option3);
+function Option3() {
+    alert("This is dialogue no 3")
+    console.log()
+}
 
 
+</script>
