@@ -6,11 +6,14 @@
 
 <script>
     //creates a variable that cannot be changed, will see how that affects user input
-    const name = "What is your name?";
+    var name = prompt("What is your name?");
 
-    prompt(name);
-//currently only displays the question and not the answer, which is less than ideal
-    console.log(name);
+//pretty sure this isnt how to do it but trying to make a loop that keeps going as long as the response to the prompt for a name is false/aka unanswered
+//everytime the loop runs it asks for a name and distplays it in the console log (theoretically)
+    while (name==false) {
+    name
+       console.log(name);
+}
 
 //Create asking for name loop
 
@@ -22,7 +25,7 @@ myButton.addEventListener("click", Option1);
 
 //creates a function so the pc knows what to do when the button is pressed
 function Option1() {
-    alert("This is dialogue no 1")
+    alert("Dear "+ name + " this is dialogue no 1")
     console.log()
 }
 
@@ -30,7 +33,7 @@ function Option1() {
 var myButton = document.getElementById("2nd");
 myButton.addEventListener("click", Option2);
 function Option2() {
-    alert("This is dialogue no 2")
+    alert("Dear "+ name + " this is dialogue no 2")
     console.log()
 }
 
@@ -38,7 +41,7 @@ function Option2() {
 var myButton = document.getElementById("3rd");
 myButton.addEventListener("click", Option3);
 function Option3() {
-    alert("This is dialogue no 3")
+    alert("Dear "+ name + " this is dialogue no 3")
     console.log()
 }
 
