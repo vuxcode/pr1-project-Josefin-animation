@@ -22,3 +22,9 @@ only displays the question asked in it so not working as id like,
 >2025-10-27 work on the bare minimum to make it work
 
 >2025-10-28 16:51 trying to make the asking for name loop work, looked at my old calculator code to remind myself how to use the prompt function properly (aprox 15 mins)
+
+
+>2025-10-29 12:00 want to make the loop work and start building the "tree" so different dialogue appears when pressing the same button twice, also add the dliagoue so user knows what each button option leads to. 12:20 
+
+
+>2025-10-31 my adhd has been making me avoid doing work and has been especially bad this week - _-
