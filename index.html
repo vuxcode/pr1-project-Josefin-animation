@@ -1,28 +1,84 @@
 <!-- Start writing your project code in this file! -->
  <!--creates buttons-->
+
+
 <button id="1st">Option 1</button>
 <button id="2nd">Option 2</button>
 <button id="3rd">Option 3</button>
 
 <script>
-    //creates a variable that cannot be changed, will see how that affects user input
-var name = prompt("What is your name?");
+//makes a prompt that asks for the users name
+//var name = prompt("What is your name?");
+
+
+//while the prompt name is empty it will ask til the user gives a name
+ while (name==null) {
+    var name = prompt("What is your name? Please enter it here");
+  
+        console.log(name);
+
+}
+
+
+
+//want to make a loop to prompt the user to input a name in the box
+for (var name = prompt("What is your name? Please enter it here"); name==null; name) {
+       console.log(name);
+       console.log("This loop is running")
+}
+
+confirm("Your name is "+ name+ "?");
+
+
+
+//the buttons all work now but all display after one another 
+var myButton1 = document.getElementById("1st")
+myButton1.addEventListener("click", Choice1)
+function Choice1 () {
+confirm("clicked on 1")
+}
+
+var myButton2 = document.getElementById("2nd")
+myButton2.addEventListener("click", Choice2)
+function Choice2 () {
+document.write("clicked on 2")
+}
+
+var myButton3 = document.getElementById("3rd")
+myButton3.addEventListener("click", Choice3 )
+function Choice3 () {
+document.write("clicked on 3")
+}
+
+
+
+
+//to be able to give more dialgoue without changing the number of buttons i change the meaning of the variable connected to button 1, now the only problem is you cant access it as the buttons dissapear when the documentwrite arrives
+var myButton1 = document.getElementById("1st")
+myButton1.addEventListener("click", Choice4 )
+function Choice4 () {
+document.write("clicked on 4")
+}
+
 
 //pretty sure this isnt how to do it but trying to make a loop that keeps going as long as the response to the prompt for a name is false/aka unanswered
 //everytime the loop runs it asks for a name and distplays it in the console log (theoretically)
  
 
+
+
+
+
 //PUT EVERY BRANCH IN AN ARRAY? OPTION 1->|>2|>3 IN ONE ARRAY 
 
 
 
-//made an infinte loop
-//while (name==false) {
-      // console.log(name);
-//}
+
+
 
 //Create asking for name loop
 
+/*
 document.write("Your name is "+ name +" Sirens ring throughout your neighbourhood, you know of a bunker not far from here. But you only have time to bring one person with you there"+"<br>"+ " who do you bring with you?"+
 "<br>"+
 "1. Mother"+
@@ -57,6 +113,6 @@ function Option3() {
     alert("Dear "+ name + " this is dialogue no 3")
     console.log()
 }
-
+ */
 
 </script>

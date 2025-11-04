@@ -28,3 +28,6 @@ only displays the question asked in it so not working as id like,
 
 
 >2025-10-31 my adhd has been making me avoid doing work and has been especially bad this week - _-
+
+2025-11-04 struggling, pissin and shittin myself trying to make the damn name asking loop that wont work they way i want it to. at this point i think i should ask for help and work on the other stuff meanwhile so i can actually get stuff done.
+30 mins?
