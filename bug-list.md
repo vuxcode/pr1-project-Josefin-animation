@@ -8,5 +8,7 @@
 
 4. i want the user to be able to use the buttons over and over again but if i use document.write for the functions they dissapear, and if i use confirm() then the output for the intendedn second click of the 1st button appears anyway.
 
+5. when the user presses optin 1 button, the dialogue for option 4 comes too since the condition has been met, have to come up with a way to make it not appear until the button is clicked again.
+
 
 1. Fixed: when pressin the buttons, no mattter which one it says the one belonging to the first. have no idea how it fixed itself.

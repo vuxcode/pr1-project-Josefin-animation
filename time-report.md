@@ -31,3 +31,10 @@ only displays the question asked in it so not working as id like,
 
 2025-11-04 struggling, pissin and shittin myself trying to make the damn name asking loop that wont work they way i want it to. at this point i think i should ask for help and work on the other stuff meanwhile so i can actually get stuff done.
 30 mins?
+
+>2025-11-05 GOD WHY WONT THIS STUPID LOOP WORK, ive tried both while and for but neither want to fuckin work, doesnt help that prompt() is so insistent on running no matter what so i cant tell if the loop works or if its just prompt()
+aprox 20 mins
+
+>2025-11-09 made an array, 
+aprox 15 mins? end 15:19
++ approx 20 mins total 17:40
