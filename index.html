@@ -1,25 +1,60 @@
 <!-- Start writing your project code in this file! -->
- <!--creates buttons-->
+ <!--creates buttons to be pressed-->
+ <document.write>What is your name?</document.write>
 
- <input id="textbox" type="text">
- <button onclick="getInput()">Enter</button>
-
+<input id="textbox" type="text">
+ <button onclick="getInput()">Enter it here</button>
 <button id="1st">Option 1</button>
 <button id="2nd">Option 2</button>
 <button id="3rd">Option 3</button>
 
 <script>
-//makes a prompt that asks for the users name
-//var name = prompt("What is your name?");
-
-//made an array to hold all the choice options
-var dialogue = ["This is route 1", "This is route 2", "This is route 3","This is route 1, choice 1", "This is route 2, choice 1","This is route 3, choice 1", "This is route 1, choice 2", "This is route 2, choice 2", "This is route 2, choice 3", "This is route 1, choice 3", "This is route 2, choice 3", "This is route 3, choice 3"]
-
-//function to make the textbox in html instead of promt() cuz it keeps making things worse
+//gets the input from the textbox
 function getInput() {
+
+console.log(name)
+}
 var data = document.getElementById("textbox");
 console.log(data.value)
+//saves the input name as a variable 
+var name = data.value
+
+
+//made an array to hold all the choice options
+var dialogue = ["This is route 1"+name, "This is route 2", "This is route 3","This is route 1, choice 1", "This is route 2, choice 1","This is route 3, choice 1", "This is route 1, choice 2", "This is route 2, choice 2", "This is route 2, choice 3", "This is route 1, choice 3", "This is route 2, choice 3", "This is route 3, choice 3"]
+
+
+//makes the buttons function when clicked on and will display the dialogue
+var myButton1 = document.getElementById("1st")
+myButton1.addEventListener("click", Choice1)
+function Choice1 () {
+confirm(dialogue[0])
 }
+
+var myButton2 = document.getElementById("2nd")
+myButton2.addEventListener("click", Choice2)
+function Choice2 () {
+confirm(dialogue[1])
+}
+//same as the rest of these functions
+var myButton3 = document.getElementById("3rd")
+myButton3.addEventListener("click", Choice3 )
+function Choice3 () {
+confirm(dialogue[2])
+}
+
+
+//this one appears no matter what since its connected to the 1st button being clicked so it ALWAYS appears
+var myButton4 = document.getElementById("1st")
+myButton4.addEventListener("click", Choice4 )
+function Choice4 () {
+confirm(dialogue[3])
+}
+
+
+
+//function to make the textbox in html instead of promt() cuz it keeps making things worse
+
 /*
 //while the prompt name is empty it will ask til the user gives a name
  while (name==null) {
@@ -42,24 +77,6 @@ confirm("Your name is "+ name+ "?");
 */
 
 //the buttons all work now but all display after one another 
-var myButton1 = document.getElementById("1st")
-myButton1.addEventListener("click", Choice1)
-function Choice1 () {
-confirm("clicked on 1")
-}
-
-var myButton2 = document.getElementById("2nd")
-myButton2.addEventListener("click", Choice2)
-function Choice2 () {
-confirm("clicked on 2")
-}
-
-var myButton3 = document.getElementById("3rd")
-myButton3.addEventListener("click", Choice3 )
-function Choice3 () {
-confirm("clicked on 3")
-}
-
 
 
 
@@ -67,22 +84,11 @@ confirm("clicked on 3")
 
 
 //it will always display after clickcin option 1 button, how do i make that not happen
-var myButton1 = document.getElementById("1st")
-myButton1.addEventListener("click", Choice4 )
-function Choice4 () {
-confirm("clicked on 4")
-}
 
 
 //pretty sure this isnt how to do it but trying to make a loop that keeps going as long as the response to the prompt for a name is false/aka unanswered
 //everytime the loop runs it asks for a name and distplays it in the console log (theoretically)
  
-
-
-
-
-
-//PUT EVERY BRANCH IN AN ARRAY? OPTION 1->|>2|>3 IN ONE ARRAY 
 
 
 

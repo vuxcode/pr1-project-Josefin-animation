@@ -11,4 +11,10 @@
 5. when the user presses optin 1 button, the dialogue for option 4 comes too since the condition has been met, have to come up with a way to make it not appear until the button is clicked again.
 
 
-1. Fixed: when pressin the buttons, no mattter which one it says the one belonging to the first. have no idea how it fixed itself.
+
+# Fixed Bug List
+1. Fixed: used an input form instead of a prompt()
+2. Fixed: the user now inputs their name by input form so not sure how to make it loop any more or if its even necessary. debating on making a loop for the entirety of the "game" so users dont need to refresh the page, or maybe just give a prompt or  alert to restart the whole thing
+3. 
+4. semi-fixed: the buttons dont dissapear anymore but the 1st button still makes both choice1 and choice4 appear after each other
+5. when pressin the buttons, no mattter which one it says the one belonging to the first. have no idea how it fixed itself.

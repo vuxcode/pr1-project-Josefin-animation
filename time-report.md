@@ -38,3 +38,9 @@ aprox 20 mins
 >2025-11-09 made an array, 
 aprox 15 mins? end 15:19
 + approx 20 mins total 17:40
+
+
+>2025-11-11 trying to figure out how to move the buttons further down the page for easier understanding for the user, though i think its a bit of a distraction, should probably make sure the buttons work for multiple clicks instead. If i cant fix that i guess i could just make a button for each color route?
+ca 40 mins (ca11-12 ish)
+maybe since i removed the need for a loop for the name asking maybe i can just make the program in its entirety loop so the user doesnt have to reload the page everytime
+13:55 ca 9 mins
