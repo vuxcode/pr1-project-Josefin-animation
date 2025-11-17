@@ -10,6 +10,8 @@
 
 5. when the user presses optin 1 button, the dialogue for option 4 comes too since the condition has been met, have to come up with a way to make it not appear until the button is clicked again.
 
+6. the document write in the if and if else statements isnt working as they should, probably because i havent made a clear enough condition for when it should happen
+
 
 
 # Fixed Bug List

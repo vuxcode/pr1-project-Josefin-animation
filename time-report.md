@@ -44,3 +44,15 @@ aprox 15 mins? end 15:19
 ca 40 mins (ca11-12 ish)
 maybe since i removed the need for a loop for the name asking maybe i can just make the program in its entirety loop so the user doesnt have to reload the page everytime
 13:55 ca 9 mins
+
+> 2025-11-14  15:00, it should be possible to change the color of the text or the boxes right? because i think that should be done then for clarity on which "route" they are on, and honestly just for my own fun. 
+Trying to write out the story. should probably add more text boxes so the user can see what their choice lead to
+15:34
+
+>2025-11-17 what if the user is given the option to click the buttons but they are called "blue", "green" and "pink" and when theyve picked the buttons and name box dissapears and the dialogue appears and the user is prompted to write 1||option one||one etc to get the next step
+11:41-11:56
+
+
+>2025-11-18
+
+# "Budget" 30 hours, 3-4 hours per week

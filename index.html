@@ -29,109 +29,27 @@ var myButton1 = document.getElementById("1st")
 myButton1.addEventListener("click", Choice1)
 function Choice1 () {
 confirm(dialogue[0])
-}
+};
 
 var myButton2 = document.getElementById("2nd")
 myButton2.addEventListener("click", Choice2)
 function Choice2 () {
 confirm(dialogue[1])
-}
+};
 //same as the rest of these functions
 var myButton3 = document.getElementById("3rd")
 myButton3.addEventListener("click", Choice3 )
 function Choice3 () {
 confirm(dialogue[2])
-}
+};
 
 
-//this one appears no matter what since its connected to the 1st button being clicked so it ALWAYS appears
-var myButton4 = document.getElementById("1st")
-myButton4.addEventListener("click", Choice4 )
-function Choice4 () {
-confirm(dialogue[3])
-}
+//if the user clicks the 1st button "1st choice" will be written on screen, currently doesnt work
+if (myButton1.addEventListener("click", Choice1)) {document.write("1st choice")}
 
+else if (myButton2.addEventListener("click", Choice2)) {document.write("2nd choice")}
 
+else if (myButton3.addEventListener("click", Choice3 )) {document.write("3rd choice")}
 
-//function to make the textbox in html instead of promt() cuz it keeps making things worse
-
-/*
-//while the prompt name is empty it will ask til the user gives a name
- while (name==null) {
-    var name = prompt("What is your name? Please enter it here");
-  
-        console.log(name);
-
-}
-
-
-
-//want to make a loop to prompt the user to input a name in the box
-for (var name = prompt("What is your name? Please enter it here"); name==null; name) {
-       console.log(name);
-       console.log("This loop is running")
-}
-
-confirm("Your name is "+ name+ "?");
-
-*/
-
-//the buttons all work now but all display after one another 
-
-
-
-//to be able to give more dialgoue without changing the number of buttons i change the meaning of the variable connected to button 1, now the only problem is you cant access it as the buttons dissapear when the documentwrite arrives
-
-
-//it will always display after clickcin option 1 button, how do i make that not happen
-
-
-//pretty sure this isnt how to do it but trying to make a loop that keeps going as long as the response to the prompt for a name is false/aka unanswered
-//everytime the loop runs it asks for a name and distplays it in the console log (theoretically)
- 
-
-
-
-
-
-
-//Create asking for name loop
-
-/*
-document.write("Your name is "+ name +" Sirens ring throughout your neighbourhood, you know of a bunker not far from here. But you only have time to bring one person with you there"+"<br>"+ " who do you bring with you?"+
-"<br>"+
-"1. Mother"+
-"<br>"+
-"2.Brother"+
-"<br>"+
-"3.Best friend"
-)
-//creates a variable for the button that is recognized by the id "1st"
-var myButton = document.getElementById("1st");
-//connect the buttons to the function so it actually does something
-myButton.addEventListener("click", Option1);
-
-//creates a function so the pc knows what to do when the button is pressed
-function Option1() {
-    alert("Dear "+ name + " this is dialogue no 1")
-    console.log()
-}
-
-//repeat of the previous step
-var myButton = document.getElementById("2nd");
-myButton.addEventListener("click", Option2);
-function Option2() {
-    alert("Dear "+ name + " this is dialogue no 2")
-    console.log()
-}
-
-//repeat of the previous step
-var myButton = document.getElementById("3rd");
-myButton.addEventListener("click", Option3);
-function Option3() {
-    alert("Dear "+ name + " this is dialogue no 3")
-    console.log()
-}
- */
 
 </script>
