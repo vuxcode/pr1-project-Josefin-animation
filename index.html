@@ -1,50 +1,91 @@
 <!-- Start writing your project code in this file! -->
  <!--creates buttons to be pressed-->
- <document.write>What is your name?</document.write>
+ <h1><document.write>What is your name?</document.write></h1>
 
-<input id="textbox" type="text">
+<input id="type in name" type="text">
  <button onclick="getInput()">Enter it here</button>
-<button id="1st">Option 1</button>
-<button id="2nd">Option 2</button>
-<button id="3rd">Option 3</button>
+ <!--defines how the buttons, the border and the text in themshould be colored-->
+<h1><button id="1st"style="background-color: lightpink; color:mediumvioletred; border-color: mediumvioletred">Option 1</button></h1>
+<h1><button id="2nd" style="background-color:lightgreen; color: green; border-color:green">Option 2</button></h1>
+<h1></h1><button id="3rd" style="background-color:lightskyblue; color:blue; border-color:blue">Option 3</button></h1>
 
 <script>
 //gets the input from the textbox
 function getInput() {
 
-console.log(name)
-}
-var data = document.getElementById("textbox");
+
+var data = document.getElementById("type in name");
 console.log(data.value)
 //saves the input name as a variable 
 var name = data.value
+console.log(name)
+}
 
 
-//made an array to hold all the choice options
-var dialogue = ["This is route 1"+name, "This is route 2", "This is route 3","This is route 1, choice 1", "This is route 2, choice 1","This is route 3, choice 1", "This is route 1, choice 2", "This is route 2, choice 2", "This is route 2, choice 3", "This is route 1, choice 3", "This is route 2, choice 3", "This is route 3, choice 3"]
+//made an array to hold all the text for every choice option
+var dialogue = ["Your name is "+name,
+"Youve been working at this company for about 4 years now, the job is cushy and the pay is good, but it's not the job dreamed of.", 
+
+    "You've just finished your lunchbreak, what do you want to do?  1. Get work done as an efficient employee would.   2. Get some coffee and talk to your coworkers like a well adjusted human being.   3. Or sneak off to the bathroom to check your phone like the goblin you are. ", 
+"Such a good emplyee, you deserve a treat, but only on your lunchbreak!",
+   "This is route 1, choice 1",
+ "This is route 2, choice 1",
+    "This is route 3, choice 1", 
+ "This is route 1, choice 2", 
+ "This is route 2, choice 2", 
+ "This is route 2, choice 3", 
+ "This is route 1, choice 3", 
+ "This is route 2, choice 3", 
+ "This is route 3, choice 3"]
 
 
 //makes the buttons function when clicked on and will display the dialogue
+//creates a variable that contains the ID for the button
 var myButton1 = document.getElementById("1st")
+//makes the program "listen out" for the button being clicked
 myButton1.addEventListener("click", Choice1)
+//creates a function that will happen when the button is pressed
 function Choice1 () {
 confirm(dialogue[0])
+confirm(dialogue[1])
+confirm(dialogue[2])
+console.log("function 1 is running")
 };
 
 var myButton2 = document.getElementById("2nd")
 myButton2.addEventListener("click", Choice2)
 function Choice2 () {
+confirm(dialogue[0])
 confirm(dialogue[1])
+confirm(dialogue[2])
+console.log("function 2 is running")
 };
 //same as the rest of these functions
 var myButton3 = document.getElementById("3rd")
 myButton3.addEventListener("click", Choice3 )
 function Choice3 () {
-confirm(dialogue[2])
+confirm(dialogue[0])
+confirm(dialogue[1])
+confirm(dialogue[5])
+console.log("function 3 is running")
 };
 
 
 //if the user clicks the 1st button "1st choice" will be written on screen, currently doesnt work
+
+
+// did this and now button 1 isnt working, fun
+var myButton1 = document.getElementById("1st")
+myButton1.addEventListener("click", Choice1)
+function Choice1 () {
+if (myButton1.addEventListener("click", Choice1)) {
+
+confirm(dialogue[4]) 
+}
+
+   
+};
+
 if (myButton1.addEventListener("click", Choice1)) {document.write("1st choice")}
 
 else if (myButton2.addEventListener("click", Choice2)) {document.write("2nd choice")}

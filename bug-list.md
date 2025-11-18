@@ -12,6 +12,10 @@
 
 6. the document write in the if and if else statements isnt working as they should, probably because i havent made a clear enough condition for when it should happen
 
+7. trying to make the buttons reusable, starting w button 1 BUUUUT now the 1st button isnt working at all...
+
+8. if a name isnt in the box already the name is kept empty and even when input a name it will still read as <empty string>. but it works if you input a name and reload the page becuase it stays there for some reason.
+
 
 
 # Fixed Bug List
@@ -20,3 +24,15 @@
 3. 
 4. semi-fixed: the buttons dont dissapear anymore but the 1st button still makes both choice1 and choice4 appear after each other
 5. when pressin the buttons, no mattter which one it says the one belonging to the first. have no idea how it fixed itself.
+
+6.
+
+
+7. 
+8. it works better now since i moved 
+<!--var data = document.getElementById("type in name");
+console.log(data.value)
+//saves the input name as a variable 
+var name = data.value
+console.log(name)-->
+into the function for the text box, buuut now i cant access the name variable since it excists only inside the function. could i make a function inside the function? ok i tried that buut it didnt really work as id like to

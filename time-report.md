@@ -53,6 +53,14 @@ Trying to write out the story. should probably add more text boxes so the user c
 11:41-11:56
 
 
->2025-11-18
+>2025-11-18 added <h1> tags to the buttons, id also like to change the color of each button. i learned how to do that for html, pretty fun actually, so now each button has their own color.
+10:02-10:17
+10:22-ish - 10:37
+11:00-11:17
+is there a way to "reset" the buttons so they wont pop up the old options, 
+12:11 - 12:26 
+
+16:40-16:55
+total 1h & 15mins
 
 # "Budget" 30 hours, 3-4 hours per week
