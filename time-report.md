@@ -63,4 +63,8 @@ is there a way to "reset" the buttons so they wont pop up the old options,
 16:40-16:55
 total 1h & 15mins
 
+
+>2025-11-19 tried to make the name accessible outside of its function but i have yet to make that happen, fixed the option1 buttons problem but back at square 1 on how to make the button reusable to the next options without it displaying all of them at once or none of them
+10:15 -11:22 - aprox 1h
+
 # "Budget" 30 hours, 3-4 hours per week
