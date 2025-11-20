@@ -86,8 +86,9 @@ console.log("function 3 is running")
 //could i set a timeout so that the button wont do anything until the 1st has already been pressed?
 //try to make the 1st button work for a 4th option, again
 var myButton4 = document.getElementById("1st")
-myButton4.addEventListener("click", Choice4)
+myButton4.addEventListener("click", Choice4.setTimeout(90000))
 function Choice4() {
+
 confirm(dialogue[6]);
 }
 
