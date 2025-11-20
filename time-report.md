@@ -67,4 +67,7 @@ total 1h & 15mins
 >2025-11-19 tried to make the name accessible outside of its function but i have yet to make that happen, fixed the option1 buttons problem but back at square 1 on how to make the button reusable to the next options without it displaying all of them at once or none of them
 10:15 -11:22 - aprox 1h
 
+
+>2025-11-20 worst case scenario if i cant make the buttons work ill just keep the one for the name input and just let the rest be if and if else confirm boxes i guess
+
 # "Budget" 30 hours, 3-4 hours per week
