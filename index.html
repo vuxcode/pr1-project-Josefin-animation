@@ -11,10 +11,28 @@
 <h1></h1><button id="3rd" style="background-color:lightskyblue; color:blue; border-color:blue">Option 3</button></h1>
 
 <script>
+   var route = 0
+//made an array to hold all the text for every choice option
+var dialogue = [["Your name is "+namesake,
+"Youve been working at this company for about 4 years now, the job is cushy and the pay is good, but it's not the job dreamed of.", 
+
+    "You've just finished your lunchbreak, what do you want to do?  1. Get work done as an efficient employee would.   2. Get some coffee and talk to your coworkers like a well adjusted human being.   3. Or sneak off to the bathroom to check your phone like the goblin you are. ", 
+"1. Such a good emplyee, you deserve a treat, but only on your lunchbreak!",
+   "2. Good choice! The correct way to avoid your responsibilities while still looking busy.",
+ "3.Pretty valid choice to be fair, you've been stuck in this office since like 8.AM, you've earned a break for just a liiiitle longer."]
+    
+ 
+ ["This is the 1st option","Hey"+namesake+"! Working hard I see.", "Something happens, what do you do? 1. 2. 3."]
+ ["This is the second option", "You are really social"]
+["This is the 3rd option", "You are consumed by the notifications and end up doomscrolling for an hour before you snap out of it. When you get back to your desk your boss comes up and asks where you've been. What do you say? 1. I was in the bathroom and got distracted by my phone. 2. My mom called, my uncle has died. 3.","you told the truth, and your boss is not happy", "you lied, your boss is visibly ashamed and doesnt pry further.", "what did you just say??! your boss looks furious oh god."]];
+
+
 //a variable to get the name to be available outside the function, left empty so it can be filled later
    var namesake = "";
 //gets the input from the textbox
 function getInput() {
+   //a variable containing the setup and text the user needs to see before making a choice
+    var introduction = confirm(dialogue[0]) && confirm(dialogue[1])&& confirm(dialogue[2]);
    //a variable named data that is connected to the text box's button with the id
 var data = document.getElementById("type in name");
 //saves the input name as a variable 
@@ -22,31 +40,32 @@ var name = data.value
 //displays the input data in the text box in the console
 console.log(name)
 var namesake = name
+
+//if the user input a name into the box the introduction text will appear
+if (getInput==true) {
+introduction
 }
-//an attempt to fill the variable with the name that was input but alas, did not work
-var namesake =getInput[5]
+ else if (getInput==false) {prompt("Please input a name")
 
-//i want to get the name variable to be used outside of the function but i dont know how...
+ }
+ }
+
+ //if the user inputs a name in the text box the dialogue pops up as it should?
+
+
+
+var route = 0;
+
+var demo = [
+   ["A", "B", "C"], // Each set of purple brackets would be a different route
+                    // Then each index with "A" for example would be a "choice"
+                    // You can access ONE string using this syntax: demo[route][choice]
+   ["1", "2", "3"]
+];
 
 
 
 
-//made an array to hold all the text for every choice option
-var dialogue = ["Your name is "+namesake,
-"Youve been working at this company for about 4 years now, the job is cushy and the pay is good, but it's not the job dreamed of.", 
-
-    "You've just finished your lunchbreak, what do you want to do?  1. Get work done as an efficient employee would.   2. Get some coffee and talk to your coworkers like a well adjusted human being.   3. Or sneak off to the bathroom to check your phone like the goblin you are. ", 
-"1. Such a good emplyee, you deserve a treat, but only on your lunchbreak!",
-   "2. Good choice! The correct way to avoid your responsibilities while still looking busy.",
- "3.Pretty valid choice to be fair, you've been stuck in this office since like 8.AM, you've earned a break for just a liiiitle longer.",
-    
- "This is route 3, choice 1", 
- "This is route 1, choice 2", 
- "This is route 2, choice 2", 
- "This is route 2, choice 3", 
- "This is route 1, choice 3", 
- "This is route 2, choice 3", 
- "This is route 3, choice 3"];
 
 
 //makes the buttons function when clicked on and will display the dialogue
@@ -56,6 +75,12 @@ var myButton1 = document.getElementById("1st")
 myButton1.addEventListener("click", Choice1)
 //creates a function that will happen when the button is pressed
 function Choice1 () {
+   if (route == 0) {
+      // Change route because button 1 was chosen while on route 0!? If that makes sense
+      route = "?";
+   }
+   if (route == 1)
+confirm(demo[route][0])
 confirm(dialogue[0]);
 confirm(dialogue[1]);
 confirm(dialogue[2]);
@@ -76,44 +101,10 @@ myButton3.addEventListener("click", Choice3 )
 function Choice3 () {
 confirm(dialogue[0]);
 confirm(dialogue[1]);
+confirm(dialogue[2]);
 confirm(dialogue[5]);
 console.log("function 3 is running")
 };
 
-
-
-
-//could i set a timeout so that the button wont do anything until the 1st has already been pressed?
-//or maybe i could make buttons for every option but hide them til they are relevant?
-//can i diable a function after an amount of time ?
-//try to make the 1st button work for a 4th option, again
-var myButton4 = document.getElementById("1st")
-myButton4.addEventListener("click", Choice4.setTimeout(90000))
-function Choice4() {
-
-confirm(dialogue[6]);
-}
-
-
-//if the user clicks the 1st button "1st choice" will be written on screen, currently doesnt work
-/*
-// did this and now button 1 isnt working, fun
-var myButton1 = document.getElementById("1st")
-myButton1.addEventListener("click", Choice1)
-function Choice1 () {
-if (myButton1.addEventListener("click", Choice1)) {
-
-confirm(dialogue[4]) 
-}
-
-   
-};
-
-if (myButton1.addEventListener("click", Choice1)) {document.write("1st choice")}
-
-else if (myButton2.addEventListener("click", Choice2)) {document.write("2nd choice")}
-
-else if (myButton3.addEventListener("click", Choice3 )) {document.write("3rd choice")}
-*/
 
 </script>

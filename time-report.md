@@ -70,4 +70,7 @@ total 1h & 15mins
 
 >2025-11-20 worst case scenario if i cant make the buttons work ill just keep the one for the name input and just let the rest be if and if else confirm boxes i guess
 
+>2025-11-21 got advice on how to fix my button problem yesterday so i will try to put it into practice today.
+11:50-12:35 or aprox 30 mins
+
 # "Budget" 30 hours, 3-4 hours per week
