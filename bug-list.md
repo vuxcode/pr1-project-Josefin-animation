@@ -16,6 +16,11 @@
 
 8. <!--if a name isnt in the box already the name is kept empty and even when input a name it will still read as <empty string>. but it works if you input a name and reload the page becuase it stays there for some reason.-->
 
+9. having a lot of trouble with the arrays inside the arrays, current problem is weird, on line 29:32 theres an error Uncaught TypeError: can't access property "You are really social", [...]["Something happens, what do you do? 1. 2. 3."] is undefined. but that doesnt make sense to me, its litteraly reading out the contents of it to me, but in a weird order.
+
+10. im having a weird paradox where the should be first since its a variable and so the function knows what to draw from for the introduction but since they contain the name the user put in then it should be lower down so the function can get it and use it but then it wont have the dialogue array.. god this is giving me a  headache. ill remove the name from the array for now and find a use for it later maybe?
+
+11. The intro confirm boxes appear even though the textbox is left empty, not what i want for obvious reasons. 
 
 
 # Fixed Bug List

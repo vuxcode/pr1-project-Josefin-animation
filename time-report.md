@@ -73,4 +73,11 @@ total 1h & 15mins
 >2025-11-21 got advice on how to fix my button problem yesterday so i will try to put it into practice today.
 11:50-12:35 or aprox 30 mins
 
+6.2 hours total atm
+need to to 1h and 13 mins -ish every day
+
+>2025-11-24 
+started at aroun 10:00 work to understnad the array inside array situation. Aaaaa nothing works now.
+Made the "intro" pop up after the user inputs their name. Dont think i quite understand how the "route=0" variable interacts with the arrays
+12:35, aprox 1h and 20 mins
 # "Budget" 30 hours, 3-4 hours per week
