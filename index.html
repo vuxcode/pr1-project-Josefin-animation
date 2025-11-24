@@ -1,5 +1,3 @@
-
-<!-- Start writing your project code in this file! -->
  <!--creates buttons to be pressed-->
  <h3>To start the adventure write a name in the box and press the "Confirm" button.</h3>
  <h1>What is your name?</h1>
@@ -21,10 +19,10 @@ var myButton3 = document.getElementById("3rd")
 
 var data = document.getElementById("textbox");
 //saves the input name as a variable 
-var name;
+var username;
 
 
-//i think ive done this part wrong
+//TRY TO KEEP IT SIMPLE FIRST/me
    var INTROroute = 0;
    var PINKroute = 1;
    var GREENroute = 2;
@@ -32,43 +30,48 @@ var name;
 //made an array with arrays inside of it to hold all the text for every choice option
 
 
-//RESTRUCTURE THIS WHOLE THING SO IT MAKES SENSE
+//make it a atmospheric dungeon
 var dialogue = [
 //INTROroute 
 ["Youve been working at this company for about 4 years now, the job is cushy and the pay is good, but it's not the job dreamed of.", 
-    "You've just finished your lunchbreak, what do you want to do?  1. Get work done as an efficient employee would.   2. Get some coffee and talk to your coworkers like a well adjusted human being.   3. Or sneak off to the bathroom to check your phone like the goblin you are. "] 
+    "You've just finished your lunchbreak, what do you want to do?  1. Get work done as an efficient employee would.   2. Get some coffee and talk to your coworkers like a well adjusted human being.   3. Or sneak off to the bathroom to check your phone like the goblin you are. "] ,
 //PINKroute
-["1. Such a good emplyee, you deserve a treat, but only on your lunchbreak!", "You start working and get into a flow, it goes so well you finish all your assigned tasks for today, there are still 3 hours left before you can clock out.","You told the truth, your boss is not happy"]
+["1. Such a good emplyee, you deserve a treat, but only on your lunchbreak!", "You start working and get into a flow, it goes so well you finish all your assigned tasks for today, there are still 3 hours left before you can clock out.","You told the truth, your boss is not happy"],
 //GREENroute
-[ "2. Good choice! The correct way to avoid your responsibilities while still looking busy.","This is the second option"]
-["This is the 1st option","Hey, Working hard I see.", "what did you just say??! your boss looks furious oh god.","Something happens, what do you do? 1. 2. 3."]
+["2. Good choice! The correct way to avoid your responsibilities while still looking busy.","This is the second option"],
+["This is the 1st option","Hey, Working hard I see.", "what did you just say??! your boss looks furious oh god.","Something happens, what do you do? 1. 2. 3."],
 //BLUEroute
 [ "3.Pretty valid choice to be fair, you've been stuck in this office since like 8.AM, you've earned a break for just a liiiitle longer.", 
 "This is the 3rd option", 
-"You are consumed by the notifications and end up doomscrolling for an hour before you snap out of it. When you get back to your desk your boss comes up and asks where you've been. What do you say? 1. Tell the truth; I was in the bathroom and got distracted by my phone. 2. Lie; 2. My mom called, my uncle has died. 3. Speak without thinking; what did you just say??! your boss looks furious oh god." ]
+"You are consumed by the notifications and end up doomscrolling for an hour before you snap out of it. When you get back to your desk your boss comes up and asks where you've been. What do you say? 1. Tell the truth; I was in the bathroom and got distracted by my phone. 2. Lie; 2. My mom called, my uncle has died. 3. Speak without thinking; what did you just say??! your boss looks furious oh god." ],
 ];
 
 //gets the input from the textbox
 function getInput() {
-   //a variable containing the setup and text the user needs to see before making a choice
-    var introduction = confirm("should contain INTROroute[0]") && confirm("should contain INTROroute[1]")&& confirm("should contain INTROroute[3]");
-   //a variable named data that is connected to the text box's button with the id
-
+   //variable containing the name the user has put in, if not its empty
+   //DO NOT USE var before the variable you want to update, the program belives its a new variable if you do
+   username= data.value;
+ console.log("function is running"+ "the name is:"+ username)
 //if the user input a name into the box the introduction text will appear
-if (name==true) {
-introduction;
+if (username==true) {
+     //a variable containing the setup and text the user needs to see before making a choice
+   var introduction = confirm("should contain INTROroute[0]") && confirm("should contain INTROroute[1]")&& confirm("should contain INTROroute[3]");
+   console.log("are we at if?")
 }
- else if (name==false) {prompt("Please input a name")
- introduction
+ else if (username==false) {alert("Please input a name")
+ console.log("or at else if")
 
  }
  //displays the input data in the text box in the console
- 
-name = data.value
-console.log(name);
-console.log(data.value)
- }
 
+console.log(username);
+console.log(data.value)
+//updates the username, BUT is seen as undefined, most likely since it cannot be acessed outside of the function
+ };
+
+
+
+//HOW do i get the username data outside the function??
 
 
 /*

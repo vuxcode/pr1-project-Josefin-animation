@@ -41,3 +41,9 @@ console.log(data.value)
 var name = data.value
 console.log(name)-->
 into the function for the text box, buuut now i cant access the name variable since it excists only inside the function. could i make a function inside the function? ok i tried that buut it didnt really work as id like to
+
+
+9. fixed sort of , the arrays need a , between them to separate them apparently
+
+
+11. fixed, changed the else if statement
