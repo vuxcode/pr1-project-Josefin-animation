@@ -22,6 +22,10 @@
 
 11. The intro confirm boxes appear even though the textbox is left empty, not what i want for obvious reasons. 
 
+12. <!--the intro text built into the confirm button function isnet appearng->
+13. similar problem but now its only the else if part that isnt working.
+
+
 
 # Fixed Bug List
 1. Fixed: used an input form instead of a prompt()
@@ -47,3 +51,5 @@ into the function for the text box, buuut now i cant access the name variable si
 
 
 11. fixed, changed the else if statement
+
+12. i feel so big brain smart rn i just changed the username==true to (username!==false) and now it works.

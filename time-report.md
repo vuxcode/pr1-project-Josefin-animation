@@ -81,4 +81,14 @@ started at aroun 10:00 work to understnad the array inside array situation. Aaaa
 Made the "intro" pop up after the user inputs their name. Dont think i quite understand how the "route=0" variable interacts with the arrays
 12:35, aprox 1h and 20 mins
 + aprox 1 h  (13:00 at school)
+
+
+>2025-11-26 want to finish writing the story so it can be over and done with so i can focus on putting the correct responses in the arrays.
+12:00    (30mins)
+23:30 (15 mins)
+
+>2025-11-27 figure out wtf is wrong with <!--else if (username==null) {alert("Please input a name") console.log("or at else if")-->
+
+
+
 # "Budget" 30 hours, 3-4 hours per week
