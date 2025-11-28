@@ -87,7 +87,8 @@ Made the "intro" pop up after the user inputs their name. Dont think i quite und
 12:00    (30mins)
 23:30 (15 mins)
 
->2025-11-27 figure out wtf is wrong with <!--else if (username==null) {alert("Please input a name") console.log("or at else if")-->
+>2025-11-27 figure out wtf is wrong with <!--else if (username==null) {alert("Please input a name") console.log("or at else if")-->'
+11:25 (15mins)
 
 
 
