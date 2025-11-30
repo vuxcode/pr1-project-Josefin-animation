@@ -34,16 +34,14 @@ var username;
 //make it a atmospheric dungeon
 var dialogue = [
 //INTROroute conatins: //intro texts and full options
-["Youve been working at this company for about 4 years now, the job is cushy and the pay is good, but it's not the job dreamed of.", 
-    "You've just finished your lunchbreak, what do you want to do?  1. Get work done as an efficient employee would.   2. Get some coffee and talk to your coworkers like a well adjusted human being.   3. Or sneak off to the bathroom to check your phone like the goblin you are. ", "You are consumed by the notifications and end up doomscrolling for an hour before you snap out of it. When you get back to your desk your boss comes up and asks where you've been. What do you say? 1. Tell the truth; I was in the bathroom and got distracted by my phone. 2. Lie; 2. My mom called, my uncle has died. 3. Speak without thinking.", "Something happens, what do you do? 1. 2. 3."],
+["Youve been working at this company for about 4 years now, the job is cushy and the pay is good, but it's not the job dreamed of. You've just finished your lunchbreak, what do you want to do?                                                                                   1. Get work done as an efficient employee would.                  2. Get some coffee and talk to your coworkers like a well adjusted human being.                                                             3. Or sneak off to the bathroom to check your phone like the goblin you are. ",  "Something happens, what do you do? 1. 2. 3."],
 
 //PINKbuttonroute
-["1. Such a good emplyee, you deserve a treat, but only on your lunchbreak!", "You start working and get into a flow, it goes so well you finish all your assigned tasks for today, there are still 3 hours left before you can clock out.","You told the truth, your boss is not happy"],
+["1. Such a good emplyee, you deserve a treat, but only on your lunchbreak! You start working and get into a flow, it goes so well you finish all your assigned tasks for today, there are still 3 hours left before you can clock out. What do you do with the remaining time? 1. Ask for more work. 2. 3.","You told the truth, your boss is not happy"],
 //GREENbuttonroute
 ["2. Good choice! The correct way to avoid your responsibilities while still looking busy.","This is the second option","This is the 1st option","Hey, Working hard I see.", "what did you just say??! your boss looks furious oh god."],
 //BLUEbuttonroute
-[ "3.Pretty valid choice to be fair, you've been stuck in this office since like 8.AM, you've earned a break for just a liiiitle longer.", 
-"This is the 3rd option", "what did you just say??! your boss looks furious oh god." ],
+["You are consumed by the notifications and end up doomscrolling for an hour before you snap out of it. When you get back to your desk your boss comes up and asks where you've been. What do you say? 1. Tell the truth; I was in the bathroom and got distracted by my phone. 2. Lie; 2. My mom called, my uncle has died. 3. Speak without thinking.", "what did you just say??! your boss looks furious oh god." ],
 //Secret ending
 ["You found the truth at last", ],
 ];
@@ -57,7 +55,7 @@ function getInput() {
 //if the user input a name into the box the introduction text will appear
 if (username!==false) {
      //a variable containing the setup and text the user needs to see before making a choice
-   var introduction = confirm("should contain INTROroute[0]") && confirm("should contain INTROroute[1]")&& confirm("should contain INTROroute[3]");
+   var introduction = confirm(dialogue[INTROroute][0])
    console.log("are we at if?")
 }
  else if (username==null) {alert("Please input a name")
@@ -71,11 +69,6 @@ if (username!==false) {
 console.log(username);
 console.log(data.value)
  };
-
-
-
-//HOW do i get the username data outside the function??
-
 
 /*
 TEACHERS NOTES
@@ -92,28 +85,28 @@ var demo = [
 
 
 //makes the program "listen out" for the button being clicked
-myButton1.addEventListener("click", Choice1)
+myButton1.addEventListener("click", Pink)
 //creates a function that will happen when the button is pressed
-function Choice1 () {
-   if (PINKroute == 0) {
-      // Change route because button 1 was chosen while on route 0!? If that makes sense
-      route = "?";
+function Pink () {
+   //If the user presses the PINK button then
+   if (INTROroute==0) {
+      prompt([dialogue][PINKroute][0])
    }
    else if (route == 1) {}
 
 console.log("function 1 is running")
 };
 
-myButton2.addEventListener("click", Choice2)
-function Choice2 () {
+myButton2.addEventListener("click", Green)
+function Green () {
 confirm(dialogue[0]);
 confirm(dialogue[1]);
 confirm(dialogue[2]);
 console.log("function 2 is running")
 };
 
-myButton3.addEventListener("click", Choice3 )
-function Choice3 () {
+myButton3.addEventListener("click", Blue )
+function Blue () {
 confirm(dialogue[0]);
 confirm(dialogue[1]);
 confirm(dialogue[2]);

@@ -90,6 +90,8 @@ Made the "intro" pop up after the user inputs their name. Dont think i quite und
 >2025-11-27 figure out wtf is wrong with <!--else if (username==null) {alert("Please input a name") console.log("or at else if")-->'
 11:25 (15mins)
 
+>2025-11-28 struggling how to picture it in my mind in how i should format the if statements for the dialogue arrays.
+
 
 
 # "Budget" 30 hours, 3-4 hours per week
