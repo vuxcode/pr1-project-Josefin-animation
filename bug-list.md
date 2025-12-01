@@ -23,8 +23,9 @@
 11. The intro confirm boxes appear even though the textbox is left empty, not what i want for obvious reasons. 
 
 12. <!--the intro text built into the confirm button function isnet appearng->
-13. similar problem but now its only the else if part that isnt working.
+13. <!--similar problem but now its only the else if part that isnt working. the one thats suposed to prompt the user to input a name if they havent already.-->
 
+14. the pink button works but only for the else if at the end, the rest are left unused
 
 
 # Fixed Bug List
@@ -53,3 +54,5 @@ into the function for the text box, buuut now i cant access the name variable si
 11. fixed, changed the else if statement
 
 12. i feel so big brain smart rn i just changed the username==true to (username!==false) and now it works.
+
+13. turns out id given [] to the dialogue part where it wastnt needed confirm(dialogue[PINKroute][0])

@@ -9,6 +9,7 @@ The final program is not the goal! The aim of the project is to show how you hav
 # Project Notes
 
 > You can use this section of the file to keep notes about your project as you work on it.
+>my brain is entagnling itself like spagetti trying to figure out how to set up the if statements in the buttons
 
 # Project Summary
 
@@ -17,3 +18,4 @@ The final program is not the goal! The aim of the project is to show how you hav
 # User Guide
 
 > Write a clear user guide for how someone should use your program.
+>To start the story write in a name in the text box and click confirm. After that a text box will appear telling the first part of the story and presenting the options available to you, from 1-3. click ok or click the button with the option you want to choose. 

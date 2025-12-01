@@ -92,6 +92,11 @@ Made the "intro" pop up after the user inputs their name. Dont think i quite und
 
 >2025-11-28 struggling how to picture it in my mind in how i should format the if statements for the dialogue arrays.
 
+>2025-12-01, it feels overwhelming but needs to be done, need to do the if statements for ther buttons.
+10:55
+30 min
 
+
+aprox 8h?
 
 # "Budget" 30 hours, 3-4 hours per week
