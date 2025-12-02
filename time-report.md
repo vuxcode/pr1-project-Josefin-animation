@@ -99,4 +99,11 @@ Made the "intro" pop up after the user inputs their name. Dont think i quite und
 
 aprox 8h?
 
+>2025-12-02 i think ill finish writing the story in a separate document and just put placeholders so i can tell whats what. 
+Making the if statements for if the user presses the same button each time, then ill make ones for if the player presses blue, or green before then etc etc.
+interesting problem, ive changed the PINKroute,GREENroute etc to just route, it doesnt go to the next thing in the array, instead it goes to the next subarray instead.
+fixed, sort of by redefining route to 1 again inside else if
+30 mins? started at a little past 18
+22:44 rewriting the story again, 
+
 # "Budget" 30 hours, 3-4 hours per week

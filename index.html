@@ -24,26 +24,22 @@ var username;
 
 //TRY TO KEEP IT SIMPLE FIRST/me
    var INTROroute = 0;
-   var PINKroute = 1;
-   var GREENroute = 2;
-   var BLUEroute = 3;
-   var SECRET = 5;
+   var route = 1;
 //made an array with arrays inside of it to hold all the text for every choice option
 
 
 //make it a atmospheric dungeon
 var dialogue = [
 //INTROroute conatins: //intro texts and full options
-["Youve been working at this company for about 4 years now, the job is cushy and the pay is good, but it's not the job dreamed of. You've just finished your lunchbreak, what do you want to do?                                                                                   1. Get work done as an efficient employee would.                  2. Get some coffee and talk to your coworkers like a well adjusted human being.                                                             3. Or sneak off to the bathroom to check your phone like the goblin you are. ",  "Something happens, what do you do? 1. 2. 3."],
-
+["This is the intro/setup text"],
 //PINKbuttonroute
-["1. Such a good emplyee, you deserve a treat, but only on your lunchbreak! You start working and get into a flow, it goes so well you finish all your assigned tasks for today, there are still 3 hours left before you can clock out. What do you do with the remaining time? 1. Ask for more work. 2. 3."," 1. You ask for more work and get tasked with writing a report nobody wanted to do. What do you do? 1.Get the damn thing done like you said you would. 2. Make an AI chatbot do it. 3. Make someone else do it. ","1. You do it and by the GODS is it boring." ,"You told the truth, your boss is not happy"],
+["PINK 1,","PINK 2","PINK 3,","PINK 4"],
 //GREENbuttonroute
-["2. Good choice! The correct way to avoid your responsibilities while still looking busy.","This is the second option","This is the 1st option","Hey, Working hard I see.", "what did you just say??! your boss looks furious oh god."],
+["1 GREEN ","2 GREEN ", "3 GREEN","4 GREEN"],
 //BLUEbuttonroute
-["You are consumed by the notifications and end up doomscrolling for an hour before you snap out of it. When you get back to your desk your boss comes up and asks where you've been. What do you say? 1. Tell the truth; I was in the bathroom and got distracted by my phone. 2. Lie; 2. My mom called, my uncle has died. 3. Speak without thinking.", "what did you just say??! your boss looks furious oh god." ],
+["1 BLUE", "2 BLUE", "3 BLUE" ],
 //Secret ending
-["You found the truth at last", ],
+["This is a secret", ],
 ];
 
 //gets the input from the textbox
@@ -56,10 +52,10 @@ function getInput() {
 if (username!==false) {
      //a variable containing the setup and text the user needs to see before making a choice
    var introduction = confirm(dialogue[INTROroute][0])
-   console.log("are we at if?")
+   console.log("in IF")
 }
  else if (username==null) {alert("Please input a name")
- console.log("or at else if")
+ console.log("in ELSE IF")
 
  }
 //make an if statement that if the user inputs the password from the routes then a secret ending comes up.
@@ -75,23 +71,34 @@ console.log(data.value)
 myButton1.addEventListener("click", Pink)
 //creates a function that will happen when the button is pressed
 function Pink () {
+   //PINK + PINK + PINK
    //If a specific thing is true then the specific dialogue will pop up in a confirm, 
-   if (getInput==true) {
-      //the dialogue for the 
-      confirm(dialogue[PINKroute][0])
-      console.log("this is the pink route pt 1")
-         PINKroute=2
+   if (route==1) {
+      //pops up a confirm box containing the Pink buttons text
+      confirm(dialogue[route][0])
+      //shows in the log the button was pressed once
+      console.log("Pink was pressed 1 time")
+      //adds 1 to route, but unfortunately it makes it use the green buttons array
+      route++
    }
 
-  //now how do i make the rest appear?
-   else if (PINKroute==0) {
-      confirm(dialogue[PINKroute][1])
-      console.log("this is the pink route pt 2")
+ 
+   else if (route==2) {
+      //redefines route to 1 so it will pull from the correct subarray
+      route=1
+      confirm(dialogue[route][1])
+       console.log("Pink was pressed 2 times")
+      route++
    }
-   //for some reason this is the only one that appears at the moment
-     if (PINKroute==1) {
-      confirm(dialogue[PINKroute][2])
-      console.log("this is the pink route pt 3")
+   //GET HELP TO FIX THIS AND THE NAME BEING LEFT EMPTY NOT ASKING FOR INPUT
+
+   //this one wont appear as it should and instead the previous else if does
+    else if (route==2) {
+      route=1
+      confirm(dialogue[route][2])
+       console.log("Pink was pressed 3 times")
+       route++
+       route++
    }
 
 console.log("function 1 is running")
