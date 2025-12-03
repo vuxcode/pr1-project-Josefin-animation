@@ -21,16 +21,14 @@ var data = document.getElementById("textbox");
 //saves the input name as a variable 
 var username;
 
-
-//TRY TO KEEP IT SIMPLE FIRST/me
-   var INTROroute = 0;
    var route = 1;
+   var number = 0;
 //made an array with arrays inside of it to hold all the text for every choice option
 
 
 //make it a atmospheric dungeon
 var dialogue = [
-//INTROroute conatins: //intro texts and full options
+//intro texts and full options
 ["This is the intro/setup text"],
 //PINKbuttonroute
 ["PINK 1,","PINK 2","PINK 3,","PINK 4"],
@@ -42,37 +40,52 @@ var dialogue = [
 ["This is a secret", ],
 ];
 
+function clickTracker (){
+   //function to keep track how many times the buttons are pressed and increase the number with it.
+   if
+   //Pink counter works, blue and green does not, theres something wrong with them.
+   (myButton1.addEventListener("click", Pink)) {number++
+      console.log("Pink as pressed "+ number +" of times")
+   }
+   if
+   (myButton2.addEventListener("click", Green)) {number++
+      console.log("Green as pressed "+ number +" of times")}
+ if
+      (myButton3.addEventListener("click", Blue)) {number++
+      console.log("Blue as pressed "+ number +" of times") }
+
+}
+
 //gets the input from the textbox
 function getInput() {
    //variable containing the name the user has put in, if not its empty
    //DO NOT USE var before the variable you want to update, the program belives its a new variable if you do
    username= data.value;
- console.log("function is running "+ "the username is:"+ username)
-//if the user input a name into the box the introduction text will appear
-if (username!==false) {
-     //a variable containing the setup and text the user needs to see before making a choice
-   var introduction = confirm(dialogue[INTROroute][0])
-   console.log("in IF")
-}
- else if (username==null) {alert("Please input a name")
- console.log("in ELSE IF")
+   
+if (username=="") {alert("Please input a name")
+ console.log("no username has been given")
 
- }
-//make an if statement that if the user inputs the password from the routes then a secret ending comes up.
- else if (username=="one"||"ONE"||1){confirm(dialogue[SECRET][0])}
- //displays the input data in the text box in the console
-
-console.log(username);
+ console.log(username);
 console.log(data.value)
- };
+console.log("function is running. "+ "the username is:"+ username)
+ }
+//if the user input a name into the box the introduction text will appear
+else {
+     //a variable containing the setup and text the user needs to see before making a choice
+   var introduction = confirm(dialogue[0])
+   console.log("username has been given")
+}
 
+ };
 
 //makes the program "listen out" for the button being clicked
 myButton1.addEventListener("click", Pink)
 //creates a function that will happen when the button is pressed
 function Pink () {
    //PINK + PINK + PINK
-   //If a specific thing is true then the specific dialogue will pop up in a confirm, 
+   //If a specific thing is true then the specific dialogue will pop up in a confirm,
+   
+   //sequence lesson ref. change the route==1 to number variable instead. use numebr variable to check how many clicks
    if (route==1) {
       //pops up a confirm box containing the Pink buttons text
       confirm(dialogue[route][0])
@@ -82,23 +95,20 @@ function Pink () {
       route++
    }
 
- 
    else if (route==2) {
       //redefines route to 1 so it will pull from the correct subarray
       route=1
       confirm(dialogue[route][1])
        console.log("Pink was pressed 2 times")
       route++
+      route++
    }
-   //GET HELP TO FIX THIS AND THE NAME BEING LEFT EMPTY NOT ASKING FOR INPUT
 
    //this one wont appear as it should and instead the previous else if does
-    else if (route==2) {
+    else if (route==3) {
       route=1
       confirm(dialogue[route][2])
        console.log("Pink was pressed 3 times")
-       route++
-       route++
    }
 
 console.log("function 1 is running")
@@ -106,7 +116,10 @@ console.log("function 1 is running")
 
 myButton2.addEventListener("click", Green)
 function Green () {
-confirm(dialogue[0]);
+if (route==3)
+
+
+   confirm(dialogue[0]);
 confirm(dialogue[1]);
 confirm(dialogue[2]);
 console.log("function 2 is running")
