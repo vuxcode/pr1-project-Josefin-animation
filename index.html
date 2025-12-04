@@ -20,11 +20,12 @@ var myButton3 = document.getElementById("3rd")
 var data = document.getElementById("textbox");
 //saves the input name as a variable 
 var username;
-
+//variables for the dialogue arrays
    var route = 1;
    var number = 0;
-//made an array with arrays inside of it to hold all the text for every choice option
-
+var counter=0;
+//an array containing the colors names for the 
+var colornames= ["Pink", "Blue","Green"];
 
 //make it a atmospheric dungeon
 var dialogue = [
@@ -35,26 +36,26 @@ var dialogue = [
 //GREENbuttonroute
 ["1 GREEN ","2 GREEN ", "3 GREEN","4 GREEN"],
 //BLUEbuttonroute
-["1 BLUE", "2 BLUE", "3 BLUE" ],
-//Secret ending
-["This is a secret", ],
+["1 BLUE", "2 BLUE", "3 BLUE" ]
 ];
 
+ //function to keep track how many times the buttons are pressed and increase the number variable when the button is pressed. counts up to only 3 as there are only 3 choices to make each round.
 function clickTracker (){
-   //function to keep track how many times the buttons are pressed and increase the number with it.
    if
-   //Pink counter works, blue and green does not, theres something wrong with them.
-   (myButton1.addEventListener("click", Pink)) {number++
-      console.log("Pink as pressed "+ number +" of times")
+   //this makes a loop, what i want to happen is if the pink button is pressed the number variable goes up by one
+   (counter<dialogue.length -1) {
+      counter++
+      //tells how many times the color was pressed and how many clicks the tracker is currently at. should probably make a function or if statement so the colornames array is used correctly.
+      console.log(colornames[2]+" was pressed "+ counter +" of times")
+      console.log("clickTracker is currently at "+counter)
    }
-   if
-   (myButton2.addEventListener("click", Green)) {number++
-      console.log("Green as pressed "+ number +" of times")}
- if
-      (myButton3.addEventListener("click", Blue)) {number++
-      console.log("Blue as pressed "+ number +" of times") }
-
+else {console.log("No buttons been pressed")}
 }
+/*
+//a loop so the number counter runs but only up to 3
+for (number=0; number < 0; number++) {
+clickTracker();
+console.log("clickTracker is currently at "+number) }*/
 
 //gets the input from the textbox
 function getInput() {
@@ -82,56 +83,94 @@ else {
 myButton1.addEventListener("click", Pink)
 //creates a function that will happen when the button is pressed
 function Pink () {
-   //PINK + PINK + PINK
-   //If a specific thing is true then the specific dialogue will pop up in a confirm,
+clickTracker();
    
    //sequence lesson ref. change the route==1 to number variable instead. use numebr variable to check how many clicks
-   if (route==1) {
+   if (counter==1) {
       //pops up a confirm box containing the Pink buttons text
-      confirm(dialogue[route][0])
-      //shows in the log the button was pressed once
-      console.log("Pink was pressed 1 time")
+      confirm(dialogue[route][number])
       //adds 1 to route, but unfortunately it makes it use the green buttons array
       route++
+      number++
+    
    }
 
-   else if (route==2) {
+   else if (counter==2) {
       //redefines route to 1 so it will pull from the correct subarray
       route=1
-      confirm(dialogue[route][1])
-       console.log("Pink was pressed 2 times")
+      confirm(dialogue[route][number])
       route++
       route++
+      number++
    }
 
    //this one wont appear as it should and instead the previous else if does
-    else if (route==3) {
+    else if (counter==3) {
       route=1
       confirm(dialogue[route][2])
-       console.log("Pink was pressed 3 times")
    }
 
-console.log("function 1 is running")
+console.log("Pink function is running")
 };
 
+
+//green makes an infinte loop, pink and green have the same requirements atm
 myButton2.addEventListener("click", Green)
+//function that contains the dialogue for the green button
 function Green () {
-if (route==3)
+   clickTracker();
+ if (counter==1) {
+   route=2
+    number=0
+      //pops up a confirm box containing the Pink buttons text
+      confirm(dialogue[route][number])
+      //adds 1 to route, but unfortunately it makes it use the green buttons array
+    
+   }
 
+   else if (counter==2) {
+      //redefines route to 1 so it will pull from the correct subarray
+        route=2
+      number=1
+      
+      confirm(dialogue[route][number])
+   }
 
-   confirm(dialogue[0]);
-confirm(dialogue[1]);
-confirm(dialogue[2]);
-console.log("function 2 is running")
+   //this one wont appear as it should and instead the previous else if does
+    else if (counter==3) {
+        route=2
+      number=2
+      confirm(dialogue[route][number])
+   }
+
+console.log("Green function is running")
+
 };
 
 myButton3.addEventListener("click", Blue )
 function Blue () {
-confirm(dialogue[0]);
-confirm(dialogue[1]);
-confirm(dialogue[2]);
-confirm(dialogue[5]);
-console.log("function 3 is running")
+   clickTracker();
+   if(counter==1) {
+      route=3
+      number=0
+      confirm(dialogue[route][number]);
+   }
+   else if (counter==2) {
+      //redefines route to 1 so it will pull from the correct subarray
+        route=3
+      number=1
+      
+      confirm(dialogue[route][number])
+   }
+
+   //this one wont appear as it should and instead the previous else if does
+    else if (counter==3) {
+        route=3
+      number=2
+      confirm(dialogue[route][number])
+   }
+
+console.log("Blue function is running")
 };
 
 

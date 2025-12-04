@@ -30,6 +30,26 @@
 15. <!--The pink if function works as should but the else if s under it pull from the green and then blue arrays instead.-->
 16. opposite problem to no 14. the last else if doesnt appear at all
 
+17. the click tracker currently makes an infinte loop of constantly outputting the contents of the arrays.
+function clickTracker (){
+   //function to keep track how many times the buttons are pressed and increase the number variable when the button is pressed
+   if
+   (Pink()) {
+      number++
+      console.log("Pink as pressed "+ number +" of times")
+      console.log("clickTracker is currently at "+number)
+   }
+  if
+   (Green()) {number++
+      console.log("Green as pressed "+ number +" of times")
+   console.log("clickTracker is currently at "+number)}
+ if
+      (Blue()) {number++
+      console.log("Blue as pressed "+ number +" of times")
+   console.log("clickTracker is currently at "+number) }
+else {console.log("No buttons been pressed")}
+}. currently left unused as its not very helpful
+
 
 # Fixed Bug List
 1. Fixed: used an input form instead of a prompt()
@@ -65,3 +85,7 @@ into the function for the text box, buuut now i cant access the name variable si
 14. fixed, by changing the route back to no.1 again inside the if and else if.
 
 15. fixed by redefining route to = 1 again before the rest happens
+
+16.
+
+17.

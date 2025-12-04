@@ -106,4 +106,11 @@ fixed, sort of by redefining route to 1 again inside else if
 30 mins? started at a little past 18
 22:44 rewriting the story again, 
 
+>2025-12-04 started a bit after 10
+have made a function thats suposed to track how many times a buttons been pressed, currently does nothing tho, at first i thought it did but turns out that was console log stuff from the button functions.
+time total today: 43 mins + 20 mins+ 30
+11:53
+holy smokes i made the buttons work as they should now. now i need to fix the colorname array so it says the right thing when the button is pressed
+also need to finish story and input into the "game"
+
 # "Budget" 30 hours, 3-4 hours per week
