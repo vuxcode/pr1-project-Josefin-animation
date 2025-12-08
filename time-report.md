@@ -112,5 +112,8 @@ time total today: 43 mins + 20 mins+ 30
 11:53
 holy smokes i made the buttons work as they should now. now i need to fix the colorname array so it says the right thing when the button is pressed
 also need to finish story and input into the "game"
+maybe ad a setting so nothing happens if the user presses a button after the counters at 3.
+
+>2025-12-08 Filling out the README.md
 
 # "Budget" 30 hours, 3-4 hours per week
