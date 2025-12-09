@@ -116,4 +116,7 @@ maybe ad a setting so nothing happens if the user presses a button after the cou
 
 >2025-12-08 Filling out the README.md
 
+>2025-12-09 Finishing the way overdue story and inplementing it into the arrays, noticing some problems ill have to fix.
+10:00 - 12:30
+
 # "Budget" 30 hours, 3-4 hours per week

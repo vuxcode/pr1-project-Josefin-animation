@@ -50,6 +50,8 @@ function clickTracker (){
 else {console.log("No buttons been pressed")}
 }. currently left unused as its not very helpful
 
+18. the story text is being inplemented in full but with that i am noticing the wrong text appearing and so on, i need to make some if statements of something so the correct array comes, its mainly when the color arrays overlap that causes problems, when i make just pink, pink, pink for example it all works as it should.
+
 
 # Fixed Bug List
 1. Fixed: used an input form instead of a prompt()
