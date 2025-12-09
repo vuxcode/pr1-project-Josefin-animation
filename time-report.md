@@ -118,5 +118,6 @@ maybe ad a setting so nothing happens if the user presses a button after the cou
 
 >2025-12-09 Finishing the way overdue story and inplementing it into the arrays, noticing some problems ill have to fix.
 10:00 - 12:30
+16:54-17:34 sitll working on writing out all the endings, god its taking ages when you're on a time limit. I will try to finish up and then i hope to have the time to fix the issue of the wrong story bit coming at the wrong time, probably just need to sort them differently than i have, need to sort the texts by button needin to be pressed and make the if and else statements correspond to the correct one
 
 # "Budget" 30 hours, 3-4 hours per week

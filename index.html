@@ -34,7 +34,7 @@ var dialogue = [
 //PINKbuttonroute
 ["1. You choose the Pink door, the hinges creak like they haven't been used for years. You enter a large room that is remarkably empty, no windows or doors. The only thing of note in this room is a statue. It's kneeled and is holding out both of its open palms upwards. It looks like it is supposed to hold something. As you scour the room you see some potential items; 1. A longsword, 2. A broom, 3. A Staff.","1. You drag the sword across the floor, leaving a trail engraved into the stone floor. It takes a lot of effort to get the sword high enough but eventually you manage to place the longsword in its hands. That is when the statue's hands tighten their grip on the sword and begin to rise to its feet. It raises the sword above its head and seems ready to swing at you. 1. Run away.  2. Stand completely still. 3. Run into it and try to push it over","1. You run around the room like a lunatic; the statue is frighteningly fast and swings at you multiple times, missing you each time by just a centimeter or two. The statue does not seem to stop, but you are running out of energy and its seems the only way out is through the door you came from, though you can't be sure the statue won't follow you out. The sword swings down next to you and cracks the stone underneath, you make a run for the door and as you exit the doorframe the statue suddenly stops completely. You close the door and catch your breath, back where you started, but at least you're alive."],
 //GREENbuttonroute
-[" You open the Green door and your senses gain an unexpected sense of calm as the smell of fresh air fills your nostrils and your view is engulfed by the green foliage inside. It looks to be a maze. Somehow you can see the open skies and open land, but no way to it without walking through the maze, What is your strategy to get through this maze? 1. Keep one hand on one wall of your choice and just follow it.  2. Just walk right every time the path splits. 3. Just walk straight through the hedges.","2. Despite how loud your mind and body scream for you to run you resist. The statue moves and you are sure that this is how you die, but the pain never comes. You dare open your eyes again and see that the statue has planted the sword firmly in the ground and seems to have stopped moving completely. A soft glow comes from its eyes and the same kind of light shines an outline of a door on the wall behind it. Is it letting you leave? You cautiously move around the statue and touch the door, it is real and you are able to open it and leave this dungeon, free to see the sun shine once more and feel the wind blow in your hair.","2 GREEN ", "3 GREEN","4 GREEN"],
+[" You open the Green door and your senses gain an unexpected sense of calm as the smell of fresh air fills your nostrils and your view is engulfed by the green foliage inside. It looks to be a maze. Somehow you can see the open skies and open land, but no way to it without walking through the maze, What is your strategy to get through this maze? 1. Keep one hand on one wall of your choice and just follow it.  2. Just walk right every time the path splits. 3. Just walk straight through the hedges.","2. You lay the broom in the palms of the statue without a hitch. The hands suddenly clasp the broom and the statue stands up. Your fear spikes when it approaches you, but it leaves you alone and just sweeps the broom, What do you do? 1. Try to take the broom 2. Wait around and see what happens. 3. Run back where you came from. ","2. Despite how loud your mind and body scream for you to run you resist. The statue moves and you are sure that this is how you die, but the pain never comes. You dare open your eyes again and see that the statue has planted the sword firmly in the ground and seems to have stopped moving completely. A soft glow comes from its eyes and the same kind of light shines an outline of a door on the wall behind it. Is it letting you leave? You cautiously move around the statue and touch the door, it is real and you are able to open it and leave this dungeon, free to see the sun shine once more and feel the wind blow in your hair.","2 GREEN ", "3 GREEN","4 GREEN"],
 //BLUEbuttonroute
 ["3. You enter through the Blue door and are met with a disturbing sight. A body lies on the floor in a pool of blood. There is a hammer on the floor and red foot prints circling the body. In a not so subtle fashion it does seem to be part of this dungeon as you read on the wall in big -totally not blood- red letters saying; 'Solve this murder' What do you inspect? 1. The hammer 2. The body 3. The footprints","3. You gather your courage and charge at it like a bull. The problem is its still made of stone. It feels like running into a concrete wall and you are sure you've broken something. Your vision goes dark.", "2 BLUE", "3 BLUE" ]
 ];
@@ -45,11 +45,10 @@ function clickTracker (){
    //this makes a loop, what i want to happen is if the pink button is pressed the number variable goes up by one
    (counter<dialogue.length -1) {
       counter++
-      //tells how many times the color was pressed and how many clicks the tracker is currently at. should probably make a function or if statement so the colornames array is used correctly.
-      console.log(colornames[2]+" was pressed "+ counter +" of times")
+     //shows in the log how many times buttons were pressed and what number the clickTracker is currently at
+      console.log("Button/s were pressed "+ counter +" of times")
       console.log("clickTracker is currently at "+counter)
    }
-else {console.log("No buttons been pressed")}
 }
 /*
 //a loop so the number counter runs but only up to 3
@@ -85,28 +84,31 @@ myButton1.addEventListener("click", Pink)
 function Pink () {
 clickTracker();
    
-   //sequence lesson ref. change the route==1 to number variable instead. use numebr variable to check how many clicks
+   //if counter==1 then the first bit of text for pink will show up in a confirm box
    if (counter==1) {
+      //if counter =1 then route will be defined as 1 so the correct subarray is chosen, and number is defined as 0 so the correct variable inside the subarray is used
+     route=1
+     number=0
       //pops up a confirm box containing the Pink buttons text
       confirm(dialogue[route][number])
-      //adds 1 to route, but unfortunately it makes it use the green buttons array
-      route++
-      number++
+      //if this if statements happens it adds 1 to the route and number variables
+     
+
     
    }
 
    else if (counter==2) {
       //redefines route to 1 so it will pull from the correct subarray
       route=1
+      number=1
       confirm(dialogue[route][number])
-      route++
-      route++
-      number++
+      
    }
 
-   //this one wont appear as it should and instead the previous else if does
+
     else if (counter==3) {
       route=1
+      number=2
       confirm(dialogue[route][2])
    }
 
@@ -114,7 +116,7 @@ console.log("Pink function is running")
 };
 
 
-//green makes an infinte loop, pink and green have the same requirements atm
+
 myButton2.addEventListener("click", Green)
 //function that contains the dialogue for the green button
 function Green () {
@@ -124,19 +126,19 @@ function Green () {
     number=0
       //pops up a confirm box containing the Pink buttons text
       confirm(dialogue[route][number])
-      //adds 1 to route, but unfortunately it makes it use the green buttons array
+   
     
    }
 
    else if (counter==2) {
-      //redefines route to 1 so it will pull from the correct subarray
+      //redefines route to 2 so it will pull from the correct subarray
         route=2
       number=1
       
       confirm(dialogue[route][number])
    }
 
-   //this one wont appear as it should and instead the previous else if does
+   
     else if (counter==3) {
         route=2
       number=2
