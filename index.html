@@ -20,23 +20,51 @@ var myButton3 = document.getElementById("3rd")
 var data = document.getElementById("textbox");
 //saves the input name as a variable 
 var username;
-//variables for the dialogue arrays
+//variables for the dialogue arrays, route for the sub array and number for the variable in the subarray
    var route = 1;
    var number = 0;
+   //a way to keep track how many times a buttons been pressed
 var counter=0;
-//an array containing the colors names for the 
-var colornames= ["Pink", "Blue","Green"];
+//an array containing the colors names for the click tracker, currently needs more work
+//var colornames= ["Pink", "Blue","Green"];
 
 //make it a atmospheric dungeon
 var dialogue = [
 //intro texts and full options
 ["You wake up in a dark damp dungeon, there are windows to the outside, but they are too high up to see anything and there doesn't seem to be a way to get up to them. In front of you are three doors, one pink like coral, another green like grass and the last is blue like the skies. Which door do you choose? 1. Pink door, 2. Green door, 3. Blue door"],
-//PINKbuttonroute
-["1. You choose the Pink door, the hinges creak like they haven't been used for years. You enter a large room that is remarkably empty, no windows or doors. The only thing of note in this room is a statue. It's kneeled and is holding out both of its open palms upwards. It looks like it is supposed to hold something. As you scour the room you see some potential items; 1. A longsword, 2. A broom, 3. A Staff.","1. You drag the sword across the floor, leaving a trail engraved into the stone floor. It takes a lot of effort to get the sword high enough but eventually you manage to place the longsword in its hands. That is when the statue's hands tighten their grip on the sword and begin to rise to its feet. It raises the sword above its head and seems ready to swing at you. 1. Run away.  2. Stand completely still. 3. Run into it and try to push it over","1. You run around the room like a lunatic; the statue is frighteningly fast and swings at you multiple times, missing you each time by just a centimeter or two. The statue does not seem to stop, but you are running out of energy and its seems the only way out is through the door you came from, though you can't be sure the statue won't follow you out. The sword swings down next to you and cracks the stone underneath, you make a run for the door and as you exit the doorframe the statue suddenly stops completely. You close the door and catch your breath, back where you started, but at least you're alive."],
-//GREENbuttonroute
-[" You open the Green door and your senses gain an unexpected sense of calm as the smell of fresh air fills your nostrils and your view is engulfed by the green foliage inside. It looks to be a maze. Somehow you can see the open skies and open land, but no way to it without walking through the maze, What is your strategy to get through this maze? 1. Keep one hand on one wall of your choice and just follow it.  2. Just walk right every time the path splits. 3. Just walk straight through the hedges.","2. You lay the broom in the palms of the statue without a hitch. The hands suddenly clasp the broom and the statue stands up. Your fear spikes when it approaches you, but it leaves you alone and just sweeps the broom, What do you do? 1. Try to take the broom 2. Wait around and see what happens. 3. Run back where you came from. ","2. Despite how loud your mind and body scream for you to run you resist. The statue moves and you are sure that this is how you die, but the pain never comes. You dare open your eyes again and see that the statue has planted the sword firmly in the ground and seems to have stopped moving completely. A soft glow comes from its eyes and the same kind of light shines an outline of a door on the wall behind it. Is it letting you leave? You cautiously move around the statue and touch the door, it is real and you are able to open it and leave this dungeon, free to see the sun shine once more and feel the wind blow in your hair.","2 GREEN ", "3 GREEN","4 GREEN"],
-//BLUEbuttonroute
-["3. You enter through the Blue door and are met with a disturbing sight. A body lies on the floor in a pool of blood. There is a hammer on the floor and red foot prints circling the body. In a not so subtle fashion it does seem to be part of this dungeon as you read on the wall in big -totally not blood- red letters saying; 'Solve this murder' What do you inspect? 1. The hammer 2. The body 3. The footprints","3. You gather your courage and charge at it like a bull. The problem is its still made of stone. It feels like running into a concrete wall and you are sure you've broken something. Your vision goes dark.", "2 BLUE", "3 BLUE" ]
+//PINKbuttonroute, all options for when the user presses pink first; aka the room with the statue
+["1. You choose the Pink door, the hinges creak like they haven't been used for years. You enter a large room that is remarkably empty, no windows or doors. The only thing of note in this room is a statue. It's kneeled and is holding out both of its open palms upwards. It looks like it is supposed to hold something. As you scour the room you see some potential items; 1. A longsword, 2. A broom, 3. A Staff.",
+ "1. You drag the sword across the floor, leaving a trail engraved into the stone floor. It takes a lot of effort to get the sword high enough but eventually you manage to place the longsword in its hands. That is when the statue's hands tighten their grip on the sword and begin to rise to its feet. It raises the sword above its head and seems ready to swing at you. 1. Run away.  2. Stand completely still. 3. Run into it and try to push it over",
+ "2. You lay the broom in the palms of the statue without a hitch. The hands suddenly clasp the broom and the statue stands up. Your fear spikes when it approaches you, but it leaves you alone and just sweeps the broom, What do you do? 1. Try to take the broom 2. Wait around and see what happens. 3. Run back where you came from.",
+ "3. The staff is rather pretty, it has swirls engraved into the wood and seems to be well kept. You give the staff to the statue without issue. The hands wrap themselves over the staff and the statue stands up. It starts to spin the staff, a beautiful circle of magic appears above you both. What do you do? 1. Touch the Magic circle 2. Do a little dance 3. Run back out of the room", 
+ "1. You run around the room like a lunatic; the statue is frighteningly fast and swings at you multiple times, missing you each time by just a centimeter or two. The statue does not seem to stop, but you are running out of energy and its seems the only way out is through the door you came from, though you can't be sure the statue won't follow you out. The sword swings down next to you and cracks the stone underneath, you make a run for the door and as you exit the doorframe the statue suddenly stops completely. You close the door and catch your breath, back where you started, but at least you're alive.",
+  "2. Despite how loud your mind and body scream for you to run you resist. The statue moves and you are sure that this is how you die, but the pain never comes. You dare open your eyes again and see that the statue has planted the sword firmly in the ground and seems to have stopped moving completely. A soft glow comes from its eyes and the same kind of light shines an outline of a door on the wall behind it. Is it letting you leave? You cautiously move around the statue and touch the door, it is real and you are able to open it and leave this dungeon, free to see the sun shine once more and feel the wind blow in your hair.",
+  "3. You gather your courage and charge at it like a bull. The problem is its still made of stone. It feels like running into a concrete wall and you are sure you've broken something. Your vision goes dark.",
+   "1. You try to pry the broom from the statue and though it has no face you can tell its agitated. It hits you with it, you hit it back and it hits you again and doesn't stop until you lay on the floor out cold.",
+   "2. The statue cleans the entirety of this empty room and goes back to the way it was when you entered. A moment later its eyes glow and the same glow outlines the now visible door. The statue waves goodbye as you exit out to your freedom.",
+   "3. You dart out of the room and slam the door shut. You don't feel it banging on the door or any other noise from inside for that matter. You sigh with relief as you slide to the floor with your back resting against the door. What was that? Who brought you here? How are you supposed to get out? Guess the only way to know is to try another door", 
+   "1. You reach out and it feels similar to dipping your fingers in ice cold water. The statue seems to finish the spell and but a moment after you are both teleported. You take in your new surroundings, you are outside! You don't recognize this place but it's beautiful, a huge field of seemingly endless flowers. You turn to see the statue has gone back to normal but it now stands on a large stone slab. Well, now you just gotta find civilization again.", 
+   "2. It stops its casting for a moment and just observes you, it then starts to dance too. Its not very good but at least its  not attacking you. The statue gives you the staff in appreciation for the fun time and then goes back to the rigid stone statue it was before. You give the staff a little wave and a lightning bolt shoots out, shattering the statue to rubble. You start to feel guilty but shift your focus to the glowing door that wasn't there before. You walk through and find yourself back home and when you look back the door you cam through isn't there anymore.",
+   "3. You dart out of the room and slam the door shut. You don't feel it banging on the door or any other noise from inside for that matter. You sigh with relief as you slide to the floor with your back resting against the door. What was that? Who brought you here? How are you supposed to get out? Guess the only way to know is to try another door"],
+//GREENbuttonroute for if the user picks green; aka the maze
+[" You open the Green door and your senses gain an unexpected sense of calm as the smell of fresh air fills your nostrils and your view is engulfed by the green foliage inside. It looks to be a maze. Somehow you can see the open skies and open land, but no way to it without walking through the maze, What is your strategy to get through this maze? 1. Keep one hand on one wall of your choice and just follow it.  2. Just walk right every time the path splits. 3. Just walk straight through the hedges.",
+
+ "1. It takes a long time and you almost lose hope when you finally see an end to the endless green and come to a more open area of the maze, a large fountain stands in the middle of it, it's shaped like a mermaid, but currently there is no water flowing in it. There seems to be a screw or something in the midpoint of the mermaids tail, and you think one of the seashells might be a button. 1. You pull the lever hidden in the mermaids tail. 2. Press the seashell button 3. Ignore the fountain and try to find your way out of here",
+ "2. You soon realize this strategy has only led you to walk in circles. You stop and try to figure out a new strategy; that is when you hear what sounds like heavy hooves. You look toward the origin of the noise and that's when you see something running around the corner, it's a minotaur?! 1. Stick to the hedge wall to let it pass. 2. Run for your life 3. Slide under it at the last minute to let it run over you.", 
+ "3. The bushes are slack enough that you can walk through them, but not without getting your clothes snagged, bugs getting in your hair and accidentally eating a spiderweb or three. You go with this strategy for a while but eventually you end up finding what seems to be your own entrance holes. But you've only been walking straight this entire time. How is this possible? What do you do? 1. Continue on like you did and keep going straight.  2. Try to climb on top of the bushes to see where to go.  3. Try to solve the maze the way it was meant to be solved.", 
+ 
+ "1. You pull the lever and nothing happens, but as you walk away the water spouts out with such pressure that the mermaid statue gets ripped out of the fountain and shot up into the sky. It was either so heavy or fell so fast that it went straight through the floor, when you look down into it you notice the dirt on the ground was just cowering the metal underneath, there seems to be some sort of pathway in the metallic tunnels. You decide to jump down and investigate, you have no idea where it will lead but surely it will be better than to starve to death lost in a maze",
+ "2. You press the button and expect it to start the water, but instead it starts to slide the fountain to the side and reveals a long spiral staircase going down into the darkness. You enter hoping to find another way out of this strange place.",
+ "3. You ignore the fountain that is obviously a distraction and instead find a ladder you hadn't noticed before. As you step onto the ladder you can see an obvious exit, finally! You bring the ladder with you just in case and make your way to the exit. You get out with no problem and end up at a huge field of flowers, now you just gotta walk home I suppose.",
+
+"1. You jump to the side just in time for the bullheaded monster to miss you, instead it ends up charging straight ahead right through the bushes until you hear a loud crash. As you look through the holes it left you see it crashed into a large rock and knocked itself out, it might even be dead. The rock is covered in deep cracks crawling from where it hit its head. Well I guess you dont have to worry about it chasing you anymore. You manage to escape the maze.",
+ "2. You run as fast as you can but this creature is clearly faster, you feel its sharp horns impale your chest and everything goes dark.",
+"3. To its surprise you run toward it and at the right moment slide under it safely and it follows you with its gaze and ends up tripping because of it. The minotaur rolls like a bowling ball and ends its roll sliding on its stomach on the dirt ground. You waste no time and begin running where it came from and to your surprise you find a hatch and underneath it is a step ladder leading down to god know where. But as you hear the minotaur grunting and seemingly getting back in its feet you decide to take the risk and make your way down to the unknown hoping to find the way out", 
+"1. You insist on continuing your fruitless pursuit, I supose you've never heard of the sunk cost fallacy. You keep walking and walking and...walking, til the hunger and thirst you'd been ignoring get the best of you. You lay down next the a hedge and never get back up. Eventually it all goes to black.",
+"2.You try to climb onto the bushes but as you noted earlier they are quite slack so you just end up falling through, you end up getting stuck in the branches and for some reason no matter how hard you try you cant get out of them. Its like the bush itself has made you its prisoner. More and more branches crawl over you until you are completely consumed by them. ",
+"3. You give in and try to do it the way this meant to be done and walk the maze, keeping track of where you'd been, though its hard you eventually realize if you just keep to one edge of the maze with your hand it should lead you out eventually. It takes a lot longer than you'd like but after what felt like hours you find an arch made of rose bushes that seem to lead out of this place. You run out and find yourself in a theme park, oh yeah that's right that's why you were in a maze. You sigh with relief and go and enjoy yourself with the rides and the tasty food and then, you go home like nothing weird happened."],
+//BLUEbuttonroute if the user picks blue aka the murder mystery
+["3. You enter through the Blue door and are met with a disturbing sight. A body lies on the floor in a pool of blood. There is a hammer on the floor and red foot prints circling the body. In a not so subtle fashion it does seem to be part of this dungeon as you read on the wall in big -totally not blood- red letters saying; 'Solve this murder' What do you inspect? 1. The hammer 2. The body 3. The footprints", ]
 ];
 
  //function to keep track how many times the buttons are pressed and increase the number variable when the button is pressed. counts up to only 3 as there are only 3 choices to make each round.
@@ -94,7 +122,6 @@ clickTracker();
       //if this if statements happens it adds 1 to the route and number variables
      
 
-    
    }
 
    else if (counter==2) {
@@ -108,8 +135,8 @@ clickTracker();
 
     else if (counter==3) {
       route=1
-      number=2
-      confirm(dialogue[route][2])
+      number=4
+      confirm(dialogue[route][number])
    }
 
 console.log("Pink function is running")
@@ -133,7 +160,7 @@ function Green () {
    else if (counter==2) {
       //redefines route to 2 so it will pull from the correct subarray
         route=2
-      number=1
+      number=2
       
       confirm(dialogue[route][number])
    }
@@ -141,7 +168,7 @@ function Green () {
    
     else if (counter==3) {
         route=2
-      number=2
+      number=8
       confirm(dialogue[route][number])
    }
 

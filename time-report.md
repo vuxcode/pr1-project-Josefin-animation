@@ -120,4 +120,8 @@ maybe ad a setting so nothing happens if the user presses a button after the cou
 10:00 - 12:30
 16:54-17:34 sitll working on writing out all the endings, god its taking ages when you're on a time limit. I will try to finish up and then i hope to have the time to fix the issue of the wrong story bit coming at the wrong time, probably just need to sort them differently than i have, need to sort the texts by button needin to be pressed and make the if and else statements correspond to the correct one
 
+>2025-12-10 still in the story trenches, think i know how to arrange them in the ifs though
+started at around 10.
+Blues story still needs inplementing, and i need to figure out how to make it correct for when a player uses different buttons and stuff
+
 # "Budget" 30 hours, 3-4 hours per week
