@@ -128,4 +128,7 @@ Blues story still needs inplementing, and i need to figure out how to make it co
 aprox 55 +15 mins
 finally put in all that is needed in the array, need to adjust the order for the blue one so it matches the other 2 +add a function so the name is shown after being put in + making sure the intersections between color routes work as intended
 
+>2025-12-13 put the blue route array in the correct order.
+12:15
+
 # "Budget" 30 hours, 3-4 hours per week

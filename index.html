@@ -25,6 +25,10 @@ var username;
    var number = 0;
    //a way to keep track how many times a buttons been pressed
 var counter=0;
+//variables that will update if the colored button is pressed so i have something to get the correct arrays interacting
+var PinkPressed=0;
+var GreenPressed=0;
+var BluePressed=0;
 //an array containing the colors names for the click tracker, currently needs more work
 //var colornames= ["Pink", "Blue","Green"];
 
@@ -69,17 +73,24 @@ var dialogue = [
 "3. You give in and try to do it the way this meant to be done and walk the maze, keeping track of where you'd been, though its hard you eventually realize if you just keep to one edge of the maze with your hand it should lead you out eventually. It takes a lot longer than you'd like but after what felt like hours you find an arch made of rose bushes that seem to lead out of this place. You run out and find yourself in a theme park, oh yeah that's right that's why you were in a maze. You sigh with relief and go and enjoy yourself with the rides and the tasty food and then, you go home like nothing weird happened."],
 //BLUEbuttonroute if the user picks blue aka the murder mystery
 ["3. You enter through the Blue door and are met with a disturbing sight. A body lies on the floor in a pool of blood. There is a hammer on the floor and red foot prints circling the body. In a not so subtle fashion it does seem to be part of this dungeon as you read on the wall in big -totally not blood- red letters saying; 'Solve this murder' What do you inspect? 1. The hammer 2. The body 3. The footprints", //option 1
-"1. You pick up the hammer from the floor. You notice that the flat part has some red residue on it, you give it a lil lick (why tf did you do that??), yup its blood. What do you do now? 1. Compare the hammer to the wounds on the body. 2. Inspect the writing on the wall closer. 3. Try to get out by breaking the stone walls with the hammer",
+"1. You pick up the hammer from the floor. You notice that the flat part has some red residue on it, you give it a lil lick (why tf did you do that??), yup its blood. What do you do now? 1. Compare the hammer to the wounds on the body. 2. Inspect the writing on the wall closer. 3. Try to get out by breaking the stone walls with the hammer",//option 2
+"2. You crouch down, it seems to have been an adult with midlenght brown hair, they are currently laying on their belly, there are about 6 tiny holes in the body's torso. What do you do? 1. Inspect the blood on the floor 2.Check the belongings on the body 3.Move the body.",//option3
+ "3. You kneel down to get a better look at the footprints, the pattern suggests it was some kind of jogging shoes. Though it is a bit smudged you see a number in the middle of the footprints; 39. What do you do? 1. Follow the footprints. 2. Disregard them 3. Compare the prints to the body's shoes.",
+
 "1. When you look closer on the wounds on the back of the body it becomes clear the hammer is not what did it. The wounds are multiple small puncture holes, a shiv? an once pick? or maybe a screwdriver, either of those seem more likely. You have an idea of what happened but no idea who did it. Are you stuck in this dungeon? Or are you simply missing something?",
+
 "2. You look at the writing on the wall, 'This is the way out', written in red (presumably blood). You slide your finger over the text, its still wet. Did the murderer write this? It can't have been that long ago. You read the text over and over to try to find some sort of hidden clue within. And in a way you find one, you notice a small symbol on one of the stones, it looks like a-ferris wheel? You touch it and the symbol goes into the wall and the shuffling of stone can be heard as they move aside revealing an exit. You manage to escape, having to live with the question gnawing in the back of your mind. Who was the murderer?", 
-"3. Yeah no, that barely did anything. You get a few flakes of rock off before the  wooden handle breaks. In frustration you pick up the remaining hammer head and throw it at the wall, the metal clinks when it hits the stone. A moment later the stones begin to shift and a secret entryway is revealed, the problem is, a guy wearing a mascot costume steps into the light from it. Despite the costume you can easily tell that he is broad and tall. Worst of all is that he armed with an ice pick. Despite his size he is frighteningly fast. It takes but a moment before he reaches you and attacks you, he stabs you multiple times. Everything goes to black. ",//option 2
-"2. You crouch down, it seems to have been an adult with midlenght brown hair, they are currently laying on their belly, there are about 6 tiny holes in the body's torso. What do you do? 1. Inspect the blood on the floor 2.Check the belongings on the body 3.Move the body.",
+
+"3. Yeah no, that barely did anything. You get a few flakes of rock off before the  wooden handle breaks. In frustration you pick up the remaining hammer head and throw it at the wall, the metal clinks when it hits the stone. A moment later the stones begin to shift and a secret entryway is revealed, the problem is, a guy wearing a mascot costume steps into the light from it. Despite the costume you can easily tell that he is broad and tall. Worst of all is that he armed with an ice pick. Despite his size he is frighteningly fast. It takes but a moment before he reaches you and attacks you, he stabs you multiple times. Everything goes to black. ",
 "1. You look at the pool of blood, you realize you accidentally stepped into it, but as you lift your foot you notice there's no blood on it. You slide your finger on the “blood” and feel that it's actually some sort of rubber or something. You lift it, though its a bit difficult with the body in the way. You find a hatch underneath, you lift it up and find what looks to be a slide, like one you'd find at a playground. You can't see where it ends but it seems like the only way to get out of here that you've found. You slide down it into the darkness. ",
+
 "2. You check the pockets of the diseased and find a black sharpie and a theme park pamphlet, but on closer inspection it looks like the someone's written on it in black marker. It mentions a statue with a broom and a maze with a minotaur. ", 
-"3. You drag the body and lay it belly-up. You are given quite the fright when you see it has no face. It looks like a faceless mannequin head. As you feel on the legs and arms you are met with tiny squishy beads inside. The only thing that seems to be real (as far as you can tell) is the blood. You look back to the pool of blood it was laying in and you realize there's no blood on the side that was facing down. You walked in it an have no remnants of it on your shoes. You poke the puddle and recognize that its a mat made of rubber, like one you'd use on a movie set. Pulling it aside you find a hatch underneath it. Pulling on the handle you are met with a slide going down into the darkness. It's risky sure, but at least its a way forward, you think to yourself as you start to slide down it. Soon the silence is replaced with the sound of laughter and at the end of the slide you are met with cascade of colorful lights and stands as you find yourself at a carnival it seems. Was the dungeon a part of an attraction? Or is this a weird dream?", //option3
- "3. You kneel down to get a better look at the footprints, the pattern suggests it was some kind of jogging shoes. Though it is a bit smudged you see a number in the middle of the footprints; 39. What do you do? 1. Follow the footprints. 2. Disregard them 3. Compare the prints to the body's shoes. ",
+
+"3. You drag the body and lay it belly-up. You are given quite the fright when you see it has no face. It looks like a faceless mannequin head. As you feel on the legs and arms you are met with tiny squishy beads inside. The only thing that seems to be real (as far as you can tell) is the blood. You look back to the pool of blood it was laying in and you realize there's no blood on the side that was facing down. You walked in it an have no remnants of it on your shoes. You poke the puddle and recognize that its a mat made of rubber, like one you'd use on a movie set. Pulling it aside you find a hatch underneath it. Pulling on the handle you are met with a slide going down into the darkness. It's risky sure, but at least its a way forward, you think to yourself as you start to slide down it. Soon the silence is replaced with the sound of laughter and at the end of the slide you are met with cascade of colorful lights and stands as you find yourself at a carnival it seems. Was the dungeon a part of an attraction? Or is this a weird dream?",
  "1. You follow them and you notice the last one is cut off by the wall where the writing is. Is there some sort of secret door here? You look around the entire wall but can't find anything. Is the way to open it only available on the other side? ",
+
  "2. You ignore them and look around to find any sort of clue to getting out of here. You find nothing, you are starting to get hungry, tired and thirsty, you decide to rest for a while. But you never wake up.", 
+
  "3. You kneel down to get a better look, you feel your pants get wet from the blood. The shoes are a one to one match and there's even some residue left on them, was the pool of blood already here when this person came in? You feel you were left with more questions than answers." ]
 ];
 
@@ -99,16 +110,10 @@ function clickTracker (){
       console.clear()
    }
 }
-/*
-//a loop so the number counter runs but only up to 3
-for (number=0; number < 0; number++) {
-clickTracker();
-console.log("clickTracker is currently at "+number) }*/
 
 //gets the input from the textbox
 function getInput() {
    //variable containing the name the user has put in, if not its empty
-   //DO NOT USE var before the variable you want to update, the program belives its a new variable if you do
    username= data.value;
    
 if (username=="") {alert("Please input a name")
@@ -138,6 +143,7 @@ clickTracker();
       //if counter =1 then route will be defined as 1 so the correct subarray is chosen, and number is defined as 0 so the correct variable inside the subarray is used
      route=1
      number=0
+     PinkPressed++
       //pops up a confirm box containing the Pink buttons text
       confirm(dialogue[route][number])
       //if this if statements happens it adds 1 to the route and number variables
@@ -169,7 +175,19 @@ myButton2.addEventListener("click", Green)
 //function that contains the dialogue for the green button
 function Green () {
    clickTracker();
- if (counter==1) {
+   if (PinkPressed==1){
+      route=1
+      number=2
+      confirm(dialogue[route][number])
+   
+   }
+   if (BluePressed=1) {
+      route=3
+      number=2
+      confirm(dialogue[route][number])
+   }
+
+ else if (counter==1) {
    route=2
     number=0
       //pops up a confirm box containing the Pink buttons text
@@ -204,6 +222,7 @@ function Blue () {
       route=3
       number=0
       confirm(dialogue[route][number]);
+      BluePressed++
    }
    else if (counter==2) {
       //redefines route to 1 so it will pull from the correct subarray
