@@ -129,6 +129,10 @@ aprox 55 +15 mins
 finally put in all that is needed in the array, need to adjust the order for the blue one so it matches the other 2 +add a function so the name is shown after being put in + making sure the intersections between color routes work as intended
 
 >2025-12-13 put the blue route array in the correct order.
-12:15
+12:15-12:30
+i want to finish connecting the buttons like ive done a bit already today and then maybe tomorrow make a loop of function and a button for it so the user can reset the "game" instad of reloading the page. and lastly a thing that uses the players name.
+
+13:25-13:55
+a bit messy and most of all time consuming, so many arrays and words within them. the best way i found to check problems and find the correct item in the arrays was to pull up the dialogue array in the console. i also put a consolelog notation in every if and else if so i could tell which one got used and not.
 
 # "Budget" 30 hours, 3-4 hours per week

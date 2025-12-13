@@ -1,5 +1,5 @@
  <!--creates buttons to be pressed-->
- <h3>To start the adventure write a name in the box and press the "Confirm" button. Remember, some paths may not lead to the truth. Sometimes you need to go multiple paths to find the truth.</h3>
+ <h3>To start the adventure write a name in the box and press the "Confirm" button.</h3>
  <h1>What is your name?</h1>
 
 <input id="textbox" type="text">
@@ -52,7 +52,7 @@ var dialogue = [
    "2. It stops its casting for a moment and just observes you, it then starts to dance too. Its not very good but at least its  not attacking you. The statue gives you the staff in appreciation for the fun time and then goes back to the rigid stone statue it was before. You give the staff a little wave and a lightning bolt shoots out, shattering the statue to rubble. You start to feel guilty but shift your focus to the glowing door that wasn't there before. You walk through and find yourself back home and when you look back the door you cam through isn't there anymore.",
    "3. You dart out of the room and slam the door shut. You don't feel it banging on the door or any other noise from inside for that matter. You sigh with relief as you slide to the floor with your back resting against the door. What was that? Who brought you here? How are you supposed to get out? Guess the only way to know is to try another door"],
 //GREENbuttonroute for if the user picks green; aka the maze
-[" You open the Green door and your senses gain an unexpected sense of calm as the smell of fresh air fills your nostrils and your view is engulfed by the green foliage inside. It looks to be a maze. Somehow you can see the open skies and open land, but no way to it without walking through the maze, What is your strategy to get through this maze? 1. Keep one hand on one wall of your choice and just follow it.  2. Just walk right every time the path splits. 3. Just walk straight through the hedges.",
+["2. You open the Green door and your senses gain an unexpected sense of calm as the smell of fresh air fills your nostrils and your view is engulfed by the green foliage inside. It looks to be a maze. Somehow you can see the open skies and open land, but no way to it without walking through the maze, What is your strategy to get through this maze? 1. Keep one hand on one wall of your choice and just follow it.  2. Just walk right every time the path splits. 3. Just walk straight through the hedges.",
 //option 1
  "1. It takes a long time and you almost lose hope when you finally see an end to the endless green and come to a more open area of the maze, a large fountain stands in the middle of it, it's shaped like a mermaid, but currently there is no water flowing in it. There seems to be a screw or something in the midpoint of the mermaids tail, and you think one of the seashells might be a button. 1. You pull the lever hidden in the mermaids tail. 2. Press the seashell button 3. Ignore the fountain and try to find your way out of here",
  //option 2
@@ -147,24 +147,60 @@ clickTracker();
       //pops up a confirm box containing the Pink buttons text
       confirm(dialogue[route][number])
       //if this if statements happens it adds 1 to the route and number variables
-     
-
+      console.log("1st Pink")
    }
+//WORK ON THIS BIT
+   else if (GreenPressed==1){
+      route=1
+      number=2
+      confirm(dialogue[route][number])
+   console.log("2nd Pink")
+   }
+else if (BluePressed==1){
+      route=1
+      number=2
+      confirm(dialogue[route][number])
+   console.log("3rd Pink")
 
+}
    else if (counter==2) {
       //redefines route to 1 so it will pull from the correct subarray
       route=1
       number=1
       confirm(dialogue[route][number])
-      
+      console.log("4th Pink")
    }
+    else if (GreenPressed==2){
+      route=1
+      number=2
+      confirm(dialogue[route][number])
+   console.log("5th Pink") }
 
+   else if (BluePressed==2){
+      route=1
+      number=2
+      confirm(dialogue[route][number])
+   console.log("6th Pink")
 
+}
     else if (counter==3) {
       route=1
       number=4
       confirm(dialogue[route][number])
+      console.log("7th Pink")
    }
+
+    else if (GreenPressed==3){
+      route=1
+      number=2
+      confirm(dialogue[route][number])
+   console.log("8th Pink")}
+
+    else if (BluePressed==3){
+      route=1
+      number=2
+      confirm(dialogue[route][number])
+   console.log("9th Pink")}
 
 console.log("Pink function is running")
 };
@@ -175,41 +211,47 @@ myButton2.addEventListener("click", Green)
 //function that contains the dialogue for the green button
 function Green () {
    clickTracker();
-   if (PinkPressed==1){
+   //if green is pressed first the maze story starts
+   if (counter==1){
+      route=2
+      number=
+      confirm(dialogue[route][number])
+      GreenPressed++
+      console.log("1st Green")
+   }
+   //broom
+   else if (PinkPressed==1){
       route=1
       number=2
       confirm(dialogue[route][number])
-   
+   console.log("2nd Green")
    }
-   if (BluePressed=1) {
+   //inspect body
+   else if (BluePressed==1) {
       route=3
       number=2
       confirm(dialogue[route][number])
+      console.log("3rd Green")
    }
-
- else if (counter==1) {
+   //walk right everytime
+ else if (counter==2) {
    route=2
-    number=0
+    number=2
       //pops up a confirm box containing the Pink buttons text
       confirm(dialogue[route][number])
-   
+   console.log("4th Green")
     
    }
-
-   else if (counter==2) {
+//Run for your life
+   else if (counter==3) {
       //redefines route to 2 so it will pull from the correct subarray
         route=2
-      number=2
+      number=8
       
       confirm(dialogue[route][number])
+        console.log("5th Green")
    }
 
-   
-    else if (counter==3) {
-        route=2
-      number=8
-      confirm(dialogue[route][number])
-   }
 
 console.log("Green function is running")
 
@@ -223,13 +265,31 @@ function Blue () {
       number=0
       confirm(dialogue[route][number]);
       BluePressed++
+       console.log("1st Blue")
    }
+
+    else if (PinkPressed==1){
+      route=1
+      number=2
+      confirm(dialogue[route][number])
+   console.log("2nd Blue")
+   }
+
+     else if (GreenPressed==1){
+      route=1
+      number=2
+      confirm(dialogue[route][number])
+   console.log("3rd Blue")
+   }
+
+
    else if (counter==2) {
       //redefines route to 1 so it will pull from the correct subarray
         route=3
       number=1
       
       confirm(dialogue[route][number])
+       console.log("4th Blue")
    }
 
    //this one wont appear as it should and instead the previous else if does
@@ -237,6 +297,7 @@ function Blue () {
         route=3
       number=2
       confirm(dialogue[route][number])
+       console.log("5th Blue")
    }
 
 console.log("Blue function is running")
