@@ -52,6 +52,28 @@ else {console.log("No buttons been pressed")}
 
 18. the story text is being inplemented in full but with that i am noticing the wrong text appearing and so on, i need to make some if statements of something so the correct array comes, its mainly when the color arrays overlap that causes problems, when i make just pink, pink, pink for example it all works as it should.
 
+19. 3rd pink else if is giving me problems, the idea is that if green and blue have been pressed once (Greenpressed==1&&Bluepressed==1).
+
+20. MAjority of combination of button presses dont give the intended result yet.
+
+21. else if (BluePressed==1&&PinkPressed==1){
+      route=3
+      number=5
+       GreenPressed++
+      confirm(dialogue[route][number])
+   console.log("Look at writing on the wall")
+   }
+//do a lil dance
+   else if (PinkPressed==1 && BluePressed==1){
+      route=1
+      number=11
+      GreenPressed++
+      confirm(dialogue[route][number])
+      console.log("do a lil dance") 
+      both have the same requirements so the first one always shows, need to add another variable or something to fix it.
+
+22. The combinations of f.e.x; B+P+P or G+B+B always end up being trouble at the end, the last bit of dialogue either takes over the second or gets swalled by it.
+
 
 # Fixed Bug List
 1. Fixed: used an input form instead of a prompt()
@@ -91,3 +113,6 @@ into the function for the text box, buuut now i cant access the name variable si
 16.
 
 17.
+
+19. had putten the PinkPressed++ on the 4th instead of 3rd. Got a lot of "bugs" from naming things 3rd, 4th etc multiple times, so now ive renamed the console log markers as what the action is suposed to be
+20. Currently at 6 out of 27 fixed

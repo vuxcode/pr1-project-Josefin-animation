@@ -134,5 +134,23 @@ i want to finish connecting the buttons like ive done a bit already today and th
 
 13:25-13:55
 a bit messy and most of all time consuming, so many arrays and words within them. the best way i found to check problems and find the correct item in the arrays was to pull up the dialogue array in the console. i also put a consolelog notation in every if and else if so i could tell which one got used and not.
+maybe i dont need the counter variable at all? or i put the two together with &&
+
+
+>2025-12-14 11:45-12:15 aprox 30 mins
+done small adjustments to the buttons placements and added a reset everything button to avoid having to reload the page everytime you want to try again.
+12:40-13:10 aprox 30 mins
+ive calculated that in total there are at least 27 possible combinations that i need to account for.ooh boy this is gonna take a while-
+16:50 - 17:10 To keep track of which paths id checked and which i hadnt i made a little "map" with green, pink and blue markers and just checked them off when i finished them.
+
+19:11-19:41
+if i get any time over (which i doubt, i wonder if i could replace the confirm(dialogue[route][number]))- part with a function containing that.
+do an array function (push?) to add the username to the front of the array?
+
+Am now at 12 out of 27. 
+
+approx 998 minutes so about 16 hours
+
+
 
 # "Budget" 30 hours, 3-4 hours per week

@@ -5,9 +5,10 @@
 <input id="textbox" type="text">
  <button onclick="getInput()">Confirm</button>
  <!--defines how the buttons, the border and the text in themshould be colored-->
-<h1><button id="1st"style="background-color: lightpink; color:mediumvioletred; border-color: mediumvioletred">Option 1</button></h1>
-<h1><button id="2nd" style="background-color:lightgreen; color: green; border-color:green">Option 2</button></h1>
-<h1></h1><button id="3rd" style="background-color:lightskyblue; color:blue; border-color:blue">Option 3</button></h1>
+<h1><button id="1st"style="background-color: lightpink; color:mediumvioletred; border-color: mediumvioletred">Option 1</button>
+<button id="2nd" style="background-color:lightgreen; color: green; border-color:green">Option 2</button>
+<button id="3rd" style="background-color:lightskyblue; color:blue; border-color:blue">Option 3</button>
+<h1><button id="RESET">Reset Everything</button></h1>
 
 <script>
    //makes the buttons function when clicked on and will display the dialogue
@@ -18,6 +19,7 @@ var myButton2 = document.getElementById("2nd")
 var myButton3 = document.getElementById("3rd")
 
 var data = document.getElementById("textbox");
+var ResetButton = document.getElementById("RESET");
 //saves the input name as a variable 
 var username;
 //variables for the dialogue arrays, route for the sub array and number for the variable in the subarray
@@ -94,7 +96,19 @@ var dialogue = [
  "3. You kneel down to get a better look, you feel your pants get wet from the blood. The shoes are a one to one match and there's even some residue left on them, was the pool of blood already here when this person came in? You feel you were left with more questions than answers." ]
 ];
 
- //function to keep track how many times the buttons are pressed and increase the number variable when the button is pressed. counts up to only 3 as there are only 3 choices to make each round.
+ //function to reset everything to 0 so you dont have to reload the page everytime, also clears out the console log.
+ ResetButton.addEventListener("click",RESETall)
+ function RESETall() {
+PinkPressed=0
+GreenPressed=0
+BluePressed=0
+route=1
+number=0
+counter=0
+console.clear();
+ }
+ 
+//function to keep track how many times the buttons are pressed and increase the number variable when the button is pressed. counts up to only 3 as there are only 3 choices to make each round.
 function clickTracker (){
    if
    //this makes a loop, what i want to happen is if the pink button is pressed the number variable goes up by one
@@ -103,11 +117,6 @@ function clickTracker (){
      //shows in the log how many times buttons were pressed and what number the clickTracker is currently at
       console.log("Button/s were pressed "+ counter +" of times")
       console.log("clickTracker is currently at "+counter)
-   }
-   //if the counter becomes more than 3 the counter resets to 0 and the console is cleared out, currently doesnt work
-   else if (counter>3) {
-      counter=0
-      console.clear()
    }
 }
 
@@ -147,60 +156,82 @@ clickTracker();
       //pops up a confirm box containing the Pink buttons text
       confirm(dialogue[route][number])
       //if this if statements happens it adds 1 to the route and number variables
-      console.log("1st Pink")
+      console.log("chose Pink door")
    }
-//WORK ON THIS BIT
-   else if (GreenPressed==1){
-      route=1
-      number=2
+//look at pool of blood
+   else if (BluePressed==1 && GreenPressed==1){
+      route=3
+      number=7
+      PinkPressed++
       confirm(dialogue[route][number])
-   console.log("2nd Pink")
-   }
-else if (BluePressed==1){
-      route=1
-      number=2
-      confirm(dialogue[route][number])
-   console.log("3rd Pink")
+   console.log("look at pool of blood")
 
 }
+//keep one hand on a wall and follow it
+else if (GreenPressed==1){
+      route=2
+      number=1
+      PinkPressed++
+      confirm(dialogue[route][number])
+   console.log("keep one hand on a wall and follow it")
+
+}
+
+
+//Follow footprints
+else if (BluePressed==2) {
+   route=3
+   number=10
+   PinkPressed++
+   confirm(dialogue[route][number])
+   console.log("Follow footprints")
+}
+/* EITHER ALWAYS APPEARS OR NEVER APPEARS THANKS TO Pick hammer off floor
+//compare hammer and wounds
+   else if(BluePressed==1 && counter==2) {
+      route=3
+      number=4
+      PinkPressed++
+      confirm(dialogue[route][number])
+      console.log("compare hammer and wounds")
+   }
+      */
+
+//Pick hammer off floor
+else if (BluePressed==1){
+      route=3
+      number=1
+      PinkPressed++
+      confirm(dialogue[route][number])
+   console.log("Pick hammer off floor")
+}
+
+//stick to the hedge
+else if (GreenPressed==2) {
+route=2
+      number=7
+      PinkPressed++
+      confirm(dialogue[route][number])
+   console.log("stick to the hedge")
+}
+//drag sword across floor
    else if (counter==2) {
       //redefines route to 1 so it will pull from the correct subarray
       route=1
       number=1
+       PinkPressed++
       confirm(dialogue[route][number])
-      console.log("4th Pink")
+      console.log("drag sword across floor")
    }
-    else if (GreenPressed==2){
-      route=1
-      number=2
-      confirm(dialogue[route][number])
-   console.log("5th Pink") }
 
-   else if (BluePressed==2){
-      route=1
-      number=2
-      confirm(dialogue[route][number])
-   console.log("6th Pink")
-
-}
+//run like a lunatic
     else if (counter==3) {
       route=1
       number=4
+       PinkPressed++
       confirm(dialogue[route][number])
-      console.log("7th Pink")
+      console.log("run like a lunatic")
    }
-
-    else if (GreenPressed==3){
-      route=1
-      number=2
-      confirm(dialogue[route][number])
-   console.log("8th Pink")}
-
-    else if (BluePressed==3){
-      route=1
-      number=2
-      confirm(dialogue[route][number])
-   console.log("9th Pink")}
 
 console.log("Pink function is running")
 };
@@ -214,32 +245,74 @@ function Green () {
    //if green is pressed first the maze story starts
    if (counter==1){
       route=2
-      number=
+      number=0
       confirm(dialogue[route][number])
       GreenPressed++
-      console.log("1st Green")
+      console.log("Chose Green door")
    }
-   //broom
+
+   /* BOTH HAVE THE SAME REQUIREMENTS THE WRITIGN ON THE WALL ONE ALWAYS SHOWS
+   ADD ONE MORE CONDITION?
+//Look at writing on the wall
+     else if (BluePressed==1&&PinkPressed==1){
+      route=3
+      number=5
+       GreenPressed++
+      confirm(dialogue[route][number])
+   console.log("Look at writing on the wall")
+   }
+//do a lil dance
+   else if (PinkPressed==1 && BluePressed==1){
+      route=1
+      number=11
+      GreenPressed++
+      confirm(dialogue[route][number])
+      console.log("do a lil dance")
+   }
+*/
+   
+   //Lay broom in its hands 
    else if (PinkPressed==1){
       route=1
       number=2
+       GreenPressed++
       confirm(dialogue[route][number])
-   console.log("2nd Green")
+   console.log("Lay broom in its hands")
    }
+//Stand still
+    else if (PinkPressed==2){
+      route=1
+      number=5
+       GreenPressed++
+      confirm(dialogue[route][number])
+   console.log("Stand still")
+   }
+  //ignore footprints
+else if (BluePressed==2){
+      route=3
+      number=11
+      BluePressed++
+      confirm(dialogue[route][number])
+   console.log("ignore footprints")
+   }
+
+
    //inspect body
    else if (BluePressed==1) {
       route=3
       number=2
+       GreenPressed++
       confirm(dialogue[route][number])
-      console.log("3rd Green")
+      console.log("inspect body")
    }
    //walk right everytime
  else if (counter==2) {
    route=2
     number=2
+     GreenPressed++
       //pops up a confirm box containing the Pink buttons text
       confirm(dialogue[route][number])
-   console.log("4th Green")
+   console.log("Walk right everytime")
     
    }
 //Run for your life
@@ -247,9 +320,9 @@ function Green () {
       //redefines route to 2 so it will pull from the correct subarray
         route=2
       number=8
-      
+       GreenPressed++
       confirm(dialogue[route][number])
-        console.log("5th Green")
+        console.log("Run for your life")
    }
 
 
@@ -265,39 +338,70 @@ function Blue () {
       number=0
       confirm(dialogue[route][number]);
       BluePressed++
-       console.log("1st Blue")
+       console.log("Chose Blue door")
    }
 
+   //Ignore the fountain
+     else if (GreenPressed==1&&PinkPressed==1){
+      route=2
+      number=6
+       BluePressed++
+      confirm(dialogue[route][number])
+   console.log("Ignore the fountain")
+   }
+//give staff
     else if (PinkPressed==1){
       route=1
-      number=2
+      number=3
+      BluePressed++
       confirm(dialogue[route][number])
-   console.log("2nd Blue")
+   console.log("give staff")
+   }
+//Push the statue
+      else if (PinkPressed==2){
+      route=1
+      number=6
+      BluePressed++
+      confirm(dialogue[route][number])
+   console.log("Push the statue")
    }
 
      else if (GreenPressed==1){
       route=1
       number=2
+      BluePressed++
       confirm(dialogue[route][number])
    console.log("3rd Blue")
    }
 
+//run toward and slide under
+     else if (GreenPressed==2){
+      route=2
+      number=9
+      BluePressed++
+      confirm(dialogue[route][number])
+   console.log("run toward and slide under")
+   }
 
+   
+//inspect footprints
    else if (counter==2) {
       //redefines route to 1 so it will pull from the correct subarray
         route=3
-      number=1
-      
+      number=3
+      BluePressed++
       confirm(dialogue[route][number])
-       console.log("4th Blue")
+       console.log("inspect footprints")
    }
 
-   //this one wont appear as it should and instead the previous else if does
+
+   //look at bodys shoes
     else if (counter==3) {
         route=3
-      number=2
+      number=12
+      BluePressed++
       confirm(dialogue[route][number])
-       console.log("5th Blue")
+       console.log("look at bodyes shoes")
    }
 
 console.log("Blue function is running")
