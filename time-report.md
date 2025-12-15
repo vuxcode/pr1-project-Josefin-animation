@@ -153,6 +153,8 @@ approx 998 minutes so about 16 hours
 
 >2025-12-15 Figured out i can add the username to the array correctly by using the array function unshift!
 worked for about 30 mins (started at 13:05). Made 3 new variables to differentiate the the else ifs that had the same requirements but in different order. so pink gets marker with STATUE, green with MAZE and blue with CORPSE.
-started at a bit before 16:00 (18 mins)
+started at a bit before 16:00 (40 minutes). I have now added all else ifs for all 27 button combinations.
+
+NOTE TO SELF add the greenpressed, pinkpressed etc to the clicktracker
 
 # "Budget" 30 hours, 3-4 hours per week

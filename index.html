@@ -89,7 +89,7 @@ var dialogue = [
 "3. Yeah no, that barely did anything. You get a few flakes of rock off before the  wooden handle breaks. In frustration you pick up the remaining hammer head and throw it at the wall, the metal clinks when it hits the stone. A moment later the stones begin to shift and a secret entryway is revealed, the problem is, a guy wearing a mascot costume steps into the light from it. Despite the costume you can easily tell that he is broad and tall. Worst of all is that he armed with an ice pick. Despite his size he is frighteningly fast. It takes but a moment before he reaches you and attacks you, he stabs you multiple times. Everything goes to black. ",
 "1. You look at the pool of blood, you realize you accidentally stepped into it, but as you lift your foot you notice there's no blood on it. You slide your finger on the “blood” and feel that it's actually some sort of rubber or something. You lift it, though its a bit difficult with the body in the way. You find a hatch underneath, you lift it up and find what looks to be a slide, like one you'd find at a playground. You can't see where it ends but it seems like the only way to get out of here that you've found. You slide down it into the darkness. ",
 
-"2. You check the pockets of the diseased and find a black sharpie and a theme park pamphlet, but on closer inspection it looks like the someone's written on it in black marker. It mentions a statue with a broom and a maze with a minotaur. ", 
+"2. You check the pockets of the diseased and find a black sharpie and a theme park pamphlet, but on closer inspection it looks like the someone's written on it in black marker. It mentions a statue with a broom and a maze with a minotaur. This must be some sort of clue right? But you feel like you have reached the end with no answer in sight.", 
 
 "3. You drag the body and lay it belly-up. You are given quite the fright when you see it has no face. It looks like a faceless mannequin head. As you feel on the legs and arms you are met with tiny squishy beads inside. The only thing that seems to be real (as far as you can tell) is the blood. You look back to the pool of blood it was laying in and you realize there's no blood on the side that was facing down. You walked in it an have no remnants of it on your shoes. You poke the puddle and recognize that its a mat made of rubber, like one you'd use on a movie set. Pulling it aside you find a hatch underneath it. Pulling on the handle you are met with a slide going down into the darkness. It's risky sure, but at least its a way forward, you think to yourself as you start to slide down it. Soon the silence is replaced with the sound of laughter and at the end of the slide you are met with cascade of colorful lights and stands as you find yourself at a carnival it seems. Was the dungeon a part of an attraction? Or is this a weird dream?",
  "1. You follow them and you notice the last one is cut off by the wall where the writing is. Is there some sort of secret door here? You look around the entire wall but can't find anything. Is the way to open it only available on the other side? ",
@@ -150,7 +150,7 @@ else {
 
 //makes the program "listen out" for the button being clicked
 myButton1.addEventListener("click", Pink)
-//creates a function that will happen when the button is pressed
+//A function that will output the dialogue when the button is pressed
 function Pink () {
 clickTracker();
    
@@ -176,6 +176,15 @@ clickTracker();
    console.log("try to take the broom")
 
 }
+
+//Pull the mermaids tail
+     else if (PinkPressed==1&&GreenPressed==1 && MAZE==1){
+      route=2
+      number=4
+       PinkPressed++
+      confirm(dialogue[route][number])
+   console.log("Pull the mermaids tail")
+   }
 
 //Touch the magic
    else if (PinkPressed==1 && BluePressed==1 && STATUE==1){
@@ -276,10 +285,8 @@ route=2
 console.log("Pink function is running")
 };
 
-
-
 myButton2.addEventListener("click", Green)
-//function that contains the dialogue for the green button
+//function that outputs the dialogue for the green button
 function Green () {
    clickTracker();
    //if green is pressed first the maze story starts
@@ -302,6 +309,24 @@ function Green () {
    console.log("Press the seashell button")
    }
    
+   //Stay and see what happens
+   else if (PinkPressed==1 && GreenPressed==1 && STATUE==1){
+      route=1
+      number=8
+      GreenPressed++
+      confirm(dialogue[route][number])
+   console.log("Stay and see what happens")
+
+}
+
+//look through the bodys belongings
+     else if (BluePressed==1&&GreenPressed==1 && CORPSE==1){
+      route=3
+      number=8
+       GreenPressed++
+      confirm(dialogue[route][number])
+   console.log("look through the bodys belongings")
+   }
 //Climb over the bushes
      else if (BluePressed==1&&GreenPressed==1 && MAZE==1){
       route=2
@@ -399,7 +424,14 @@ function Blue () {
        console.log("Chose Blue door")
    }
 
-   
+    //dart out of the room
+     else if (PinkPressed==1&&BluePressed==1 && STATUE==1){
+      route=1
+      number=9
+       BluePressed++
+      confirm(dialogue[route][number])
+   console.log("dart out of the room")
+   }
    //break down the walls with the hammer
      else if (PinkPressed==1&&BluePressed==1 && CORPSE==1){
       route=3
@@ -417,6 +449,16 @@ function Blue () {
       confirm(dialogue[route][number])
    console.log("drag the body")
    }
+
+  //solve the maze the way its intended
+     else if (GreenPressed==1&&BluePressed==1 && MAZE==1){
+      route=2
+      number=12
+       BluePressed++
+      confirm(dialogue[route][number])
+   console.log("solve the maze the way its intended")
+   }
+
 
    //Ignore the fountain
      else if (GreenPressed==1&&PinkPressed==1 && MAZE==1){
