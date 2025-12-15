@@ -31,13 +31,16 @@ var counter=0;
 var PinkPressed=0;
 var GreenPressed=0;
 var BluePressed=0;
+var CORPSE=0;
+var MAZE=0;
+var STATUE=0;
 //an array containing the colors names for the click tracker, currently needs more work
 //var colornames= ["Pink", "Blue","Green"];
 
 //make it a atmospheric dungeon
 var dialogue = [
 //intro texts and full options
-["You wake up in a dark damp dungeon, there are windows to the outside, but they are too high up to see anything and there doesn't seem to be a way to get up to them. In front of you are three doors, one pink like coral, another green like grass and the last is blue like the skies. Which door do you choose? 1. Pink door, 2. Green door, 3. Blue door"],
+[" that is your name. And it's the first thought on your mind as you wake up in a dark damp dungeon, there are windows to the outside, but they are too high up to see anything and there doesn't seem to be a way to get up to them. In front of you are three doors, one pink like coral, another green like grass and the last is blue like the skies. Which door do you choose? 1. Pink door, 2. Green door, 3. Blue door"],
 //PINKbuttonroute, all options for when the user presses pink first; aka the room with the statue
 ["1. You choose the Pink door, the hinges creak like they haven't been used for years. You enter a large room that is remarkably empty, no windows or doors. The only thing of note in this room is a statue. It's kneeled and is holding out both of its open palms upwards. It looks like it is supposed to hold something. As you scour the room you see some potential items; 1. A longsword, 2. A broom, 3. A Staff.",//option 1
  "1. You drag the sword across the floor, leaving a trail engraved into the stone floor. It takes a lot of effort to get the sword high enough but eventually you manage to place the longsword in its hands. That is when the statue's hands tighten their grip on the sword and begin to rise to its feet. It raises the sword above its head and seems ready to swing at you. 1. Run away.  2. Stand completely still. 3. Run into it and try to push it over",
@@ -105,6 +108,9 @@ BluePressed=0
 route=1
 number=0
 counter=0
+STATUE=0
+MAZE=0
+CORPSE=0
 console.clear();
  }
  
@@ -124,6 +130,7 @@ function clickTracker (){
 function getInput() {
    //variable containing the name the user has put in, if not its empty
    username= data.value;
+   dialogue[0].unshift(username)
    
 if (username=="") {alert("Please input a name")
  console.log("no username has been given")
@@ -153,13 +160,46 @@ clickTracker();
      route=1
      number=0
      PinkPressed++
+     STATUE++
       //pops up a confirm box containing the Pink buttons text
       confirm(dialogue[route][number])
       //if this if statements happens it adds 1 to the route and number variables
       console.log("chose Pink door")
    }
+
+//try to take the broom
+   else if (PinkPressed==1 && GreenPressed==1 && STATUE==1){
+      route=1
+      number=7
+      PinkPressed++
+      confirm(dialogue[route][number])
+   console.log("try to take the broom")
+
+}
+
+//Touch the magic
+   else if (PinkPressed==1 && BluePressed==1 && STATUE==1){
+      route=1
+      number=10
+      PinkPressed++
+      confirm(dialogue[route][number])
+   console.log("Touch the magic")
+
+}
+
+
+//Keep walking straight through hedges
+   else if (BluePressed==1 && GreenPressed==1 && MAZE==1){
+      route=2
+      number=10
+      PinkPressed++
+      confirm(dialogue[route][number])
+   console.log("Keep walking straight through hedges")
+
+}
+
 //look at pool of blood
-   else if (BluePressed==1 && GreenPressed==1){
+   else if (BluePressed==1 && GreenPressed==1 && CORPSE==1){
       route=3
       number=7
       PinkPressed++
@@ -186,16 +226,16 @@ else if (BluePressed==2) {
    confirm(dialogue[route][number])
    console.log("Follow footprints")
 }
-/* EITHER ALWAYS APPEARS OR NEVER APPEARS THANKS TO Pick hammer off floor
+
 //compare hammer and wounds
-   else if(BluePressed==1 && counter==2) {
+   else if(BluePressed==1 && counter==3 && CORPSE==1) {
       route=3
       number=4
       PinkPressed++
       confirm(dialogue[route][number])
       console.log("compare hammer and wounds")
    }
-      */
+   
 
 //Pick hammer off floor
 else if (BluePressed==1){
@@ -246,15 +286,33 @@ function Green () {
    if (counter==1){
       route=2
       number=0
+      MAZE++
       confirm(dialogue[route][number])
       GreenPressed++
       console.log("Chose Green door")
    }
 
-   /* BOTH HAVE THE SAME REQUIREMENTS THE WRITIGN ON THE WALL ONE ALWAYS SHOWS
-   ADD ONE MORE CONDITION?
+   
+//Press the seashell button
+     else if (PinkPressed==1&&GreenPressed==1 && MAZE==1){
+      route=2
+      number=5
+       GreenPressed++
+      confirm(dialogue[route][number])
+   console.log("Press the seashell button")
+   }
+   
+//Climb over the bushes
+     else if (BluePressed==1&&GreenPressed==1 && MAZE==1){
+      route=2
+      number=11
+       GreenPressed++
+      confirm(dialogue[route][number])
+   console.log("Climb over the bushes")
+   }
+
 //Look at writing on the wall
-     else if (BluePressed==1&&PinkPressed==1){
+     else if (BluePressed==1&&PinkPressed==1 && CORPSE==1){
       route=3
       number=5
        GreenPressed++
@@ -262,14 +320,13 @@ function Green () {
    console.log("Look at writing on the wall")
    }
 //do a lil dance
-   else if (PinkPressed==1 && BluePressed==1){
+   else if (PinkPressed==1 && BluePressed==1 && STATUE==1){
       route=1
       number=11
       GreenPressed++
       confirm(dialogue[route][number])
       console.log("do a lil dance")
    }
-*/
    
    //Lay broom in its hands 
    else if (PinkPressed==1){
@@ -336,19 +393,51 @@ function Blue () {
    if(counter==1) {
       route=3
       number=0
+      CORPSE=1
       confirm(dialogue[route][number]);
       BluePressed++
        console.log("Chose Blue door")
    }
 
+   
+   //break down the walls with the hammer
+     else if (PinkPressed==1&&BluePressed==1 && CORPSE==1){
+      route=3
+      number=6
+       BluePressed++
+      confirm(dialogue[route][number])
+   console.log("break down the walls with the hammer")
+   }
+
+   //drag the body
+     else if (GreenPressed==1&&BluePressed==1 && CORPSE==1){
+      route=3
+      number=9
+       BluePressed++
+      confirm(dialogue[route][number])
+   console.log("drag the body")
+   }
+
    //Ignore the fountain
-     else if (GreenPressed==1&&PinkPressed==1){
+     else if (GreenPressed==1&&PinkPressed==1 && MAZE==1){
       route=2
       number=6
        BluePressed++
       confirm(dialogue[route][number])
    console.log("Ignore the fountain")
    }
+
+   //Run out of the room from the statue
+     else if (PinkPressed==1&&GreenPressed==1 && STATUE==1){
+      route=1
+      number=9
+       BluePressed++
+      confirm(dialogue[route][number])
+   console.log("Run out of the room from the statue")
+   }
+
+   
+
 //give staff
     else if (PinkPressed==1){
       route=1
@@ -365,13 +454,13 @@ function Blue () {
       confirm(dialogue[route][number])
    console.log("Push the statue")
    }
-
+//Walk straight trough the hedges
      else if (GreenPressed==1){
-      route=1
-      number=2
+      route=2
+      number=3
       BluePressed++
       confirm(dialogue[route][number])
-   console.log("3rd Blue")
+   console.log("Walk straight trough the hedges")
    }
 
 //run toward and slide under
