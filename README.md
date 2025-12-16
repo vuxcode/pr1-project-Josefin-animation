@@ -13,7 +13,7 @@ The final program is not the goal! The aim of the project is to show how you hav
 I've ended up writing my notes mainly in my time-report file. It has been an intersting experience of entangling and detangling my brain only for me to either figure it out on my own by leaving the problem be and coming up with a solution when im taking a shower, am about to fall asleep or doing dishes. Or realizing i was making things too complicated for myself or missed a simple solution because i got too focused on fixing the problem in one way only. 
 Since i took so long to ad the full story the last week/s of my project went to making else if statements for every possible button combination so every bit of story id written would appear as it should. I ended up doing A LOT of testing and making else ifs, did kinda get into the rythm with it after doing it so many times at least.
 
-![image description here](Button combinations.jpg)
+![My way of keeping track of which combinations i'd done and not](Button-combinations.jpg)
 
 # Project Summary
 
@@ -31,5 +31,6 @@ I did not end up sticking to the projects time budget in the slightest. I have A
 # User Guide
 
 > Write a clear user guide for how someone should use your program.
+
 
 To get the begining of the story write in a name in the text box and click 'Confirm'. After that a text box will appear telling the first part of the story and presenting the options available to you in the form of the three buttons below marked as 'Option 1/2/3'. Simply choose one of the 3 options and click the corresponding button, read the text that pops up and then chose a button again til you reach an ending (Currently there is only enough story for 3 button presses). If it says'Everything goes dark/black' or 'You feel you are left with more questions than answers'that means that story branch is now over. If you want to reset the game simply push the 'Reset Everything' button. And if that fails somehow, just reload the page.
