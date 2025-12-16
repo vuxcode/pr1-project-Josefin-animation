@@ -1,7 +1,6 @@
- <!--creates buttons to be pressed-->
  <h3>To start the adventure write a name in the box and press the "Confirm" button.</h3>
  <h1>What is your name?</h1>
-
+<!--Creates the buttons-->
 <input id="textbox" type="text">
  <button onclick="getInput()">Confirm</button>
  <!--defines how the buttons, the border and the text in themshould be colored-->
@@ -11,16 +10,15 @@
 <h1><button id="RESET">Reset Everything</button></h1>
 
 <script>
-   //makes the buttons function when clicked on and will display the dialogue
-//creates a variable that contains the ID for the button
-var myButton1 = document.getElementById("1st")
-var myButton2 = document.getElementById("2nd")
+//creates a variable that contains the ID for the button so they can be connected to a function
+var myButton1 = document.getElementById("1st");
+var myButton2 = document.getElementById("2nd");
 //same as the rest of these functions
-var myButton3 = document.getElementById("3rd")
+var myButton3 = document.getElementById("3rd");
 
 var data = document.getElementById("textbox");
 var ResetButton = document.getElementById("RESET");
-//saves the input name as a variable 
+//saves the input name as a variable
 var username;
 //variables for the dialogue arrays, route for the sub array and number for the variable in the subarray
    var route = 1;
@@ -34,10 +32,8 @@ var BluePressed=0;
 var CORPSE=0;
 var MAZE=0;
 var STATUE=0;
-//an array containing the colors names for the click tracker, currently needs more work
-//var colornames= ["Pink", "Blue","Green"];
 
-//make it a atmospheric dungeon
+//an arary with subarrays containing all the text for the game
 var dialogue = [
 //intro texts and full options
 [" that is your name. And it's the first thought on your mind as you wake up in a dark damp dungeon, there are windows to the outside, but they are too high up to see anything and there doesn't seem to be a way to get up to them. In front of you are three doors, one pink like coral, another green like grass and the last is blue like the skies. Which door do you choose? 1. Pink door, 2. Green door, 3. Blue door"],
@@ -117,7 +113,6 @@ console.clear();
 //function to keep track how many times the buttons are pressed and increase the number variable when the button is pressed. counts up to only 3 as there are only 3 choices to make each round.
 function clickTracker (){
    if
-   //this makes a loop, what i want to happen is if the pink button is pressed the number variable goes up by one
    (counter<dialogue.length -1) {
       counter++
      //shows in the log how many times buttons were pressed and what number the clickTracker is currently at
@@ -131,12 +126,11 @@ function getInput() {
    //variable containing the name the user has put in, if not its empty
    username= data.value;
    dialogue[0].unshift(username)
-   
+  //will ask the player to give a name if they click confimr without giving one 
 if (username=="") {alert("Please input a name")
  console.log("no username has been given")
 
- console.log(username);
-console.log(data.value)
+
 console.log("function is running. "+ "the username is:"+ username)
  }
 //if the user input a name into the box the introduction text will appear
@@ -144,6 +138,7 @@ else {
      //a variable containing the setup and text the user needs to see before making a choice
    var introduction = confirm(dialogue[0])
    console.log("username has been given")
+    console.log(username);
 }
 
  };
@@ -166,7 +161,9 @@ clickTracker();
       //if this if statements happens it adds 1 to the route and number variables
       console.log("chose Pink door")
    }
-
+/*This applies to every if and else if inside all 3 colored button functions;
+ Every else if statement is set to appear if the specific button combination (that is its condition) is done. The conditions for the first and the two last are if the user presses the same colored button multiple times. IF they press different ones the conditions are the specific button they pushed and how many times they were pushed+ a "marker" for which door they picked first, STATUE for pink, MAZE for green and CORPSE for blue.
+ route defines the subarray, number defines the specific item of the subarray. PinkPressed++ is increased by one to register that the pink button was pressed. The confirm box appears with the correct dialogue and the console log shows what the choice the user made was*/
 //try to take the broom
    else if (PinkPressed==1 && GreenPressed==1 && STATUE==1){
       route=1

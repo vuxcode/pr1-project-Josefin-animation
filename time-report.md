@@ -9,14 +9,8 @@ For example:
 
 >2025-10-23 - just made the buttons above the code, dont currently work, most likely not more than 10 mins
 
->2025-10-24 - gave comments and created the basic functions for the program. 10 minutes or less, yet to test if it works as intended 
-
-works 
-
-added prompt to ask for name 
-
-only displays the question asked in it so not working as id like,  
-
+>2025-10-24 - gave comments and created the basic functions for the program. 
+10 minutes or less, added prompt to ask for name. only displays the question asked in it so not working as id like,  
 
 
 >2025-10-27 work on the bare minimum to make it work
@@ -41,7 +35,7 @@ aprox 15 mins? end 15:19
 
 
 >2025-11-11 trying to figure out how to move the buttons further down the page for easier understanding for the user, though i think its a bit of a distraction, should probably make sure the buttons work for multiple clicks instead. If i cant fix that i guess i could just make a button for each color route?
-ca 40 mins (ca11-12 ish)
+ca 40 mins (ca 11-12 ish)
 maybe since i removed the need for a loop for the name asking maybe i can just make the program in its entirety loop so the user doesnt have to reload the page everytime
 13:55 ca 9 mins
 
@@ -59,7 +53,6 @@ Trying to write out the story. should probably add more text boxes so the user c
 11:00-11:17
 is there a way to "reset" the buttons so they wont pop up the old options, 
 12:11 - 12:26 
-
 16:40-16:55
 total 1h & 15mins
 
@@ -72,7 +65,6 @@ total 1h & 15mins
 
 >2025-11-21 got advice on how to fix my button problem yesterday so i will try to put it into practice today.
 11:50-12:35 or aprox 30 mins
-
 6.2 hours total atm
 need to to 1h and 13 mins -ish every day
 
@@ -97,7 +89,7 @@ Made the "intro" pop up after the user inputs their name. Dont think i quite und
 30 min
 
 
-aprox 8h?
+--aprox 8h total?--
 
 >2025-12-02 i think ill finish writing the story in a separate document and just put placeholders so i can tell whats what. 
 Making the if statements for if the user presses the same button each time, then ill make ones for if the player presses blue, or green before then etc etc.
@@ -149,12 +141,12 @@ do an array function (push?) to add the username to the front of the array?
 
 Am now at 12 out of 27. 
 
-approx 998 minutes so about 16 hours
+--approx 998 minutes so about 16 hours--
 
 >2025-12-15 Figured out i can add the username to the array correctly by using the array function unshift!
 worked for about 30 mins (started at 13:05). Made 3 new variables to differentiate the the else ifs that had the same requirements but in different order. so pink gets marker with STATUE, green with MAZE and blue with CORPSE.
 started at a bit before 16:00 (40 minutes). I have now added all else ifs for all 27 button combinations.
 
-NOTE TO SELF add the greenpressed, pinkpressed etc to the clicktracker
-
+>2025-12-16 Cleaned up notes that no longer applied in the program. And finishing the bug list and the README
+30mins(end 17:03)
 # "Budget" 30 hours, 3-4 hours per week

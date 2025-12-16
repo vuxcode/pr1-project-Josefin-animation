@@ -1,7 +1,4 @@
 # Bug List
-
-> Make a list of the things that don't work as expected. Keep a list of things that you have fixed and try to document how you solved them.
-
 1. <!--Problem: the prompt for a name displays the question in the console log and not the name input-->
 2. <!--the loop doesnt work and the console log inside does nothing
 3. <!--Less of a problem n more of a pet peeve, id like to move the buttons so they are centered underneath the dialogue
@@ -20,7 +17,7 @@
 
 10. <!--im having a weird paradox where the should be first since its a variable and so the function knows what to draw from for the introduction but since they contain the name the user put in then it should be lower down so the function can get it and use it but then it wont have the dialogue array.. god this is giving me a  headache. ill remove the name from the array for now and find a use for it later maybe?-->
 
-11. The intro confirm boxes appear even though the textbox is left empty, not what i want for obvious reasons. 
+11. <!--The intro confirm boxes appear even though the textbox is left empty, not what i want for obvious reasons.--> 
 
 12. <!--the intro text built into the confirm button function isnet appearng->
 13. <!--similar problem but now its only the else if part that isnt working. the one thats suposed to prompt the user to input a name if they havent already.-->
@@ -28,10 +25,9 @@
 14. <!--the pink button works but only for the else if at the end, the rest are left unused-->
 
 15. <!--The pink if function works as should but the else if s under it pull from the green and then blue arrays instead.-->
-16. opposite problem to no 14. the last else if doesnt appear at all
+16. <!--opposite problem to no 14. the last else if doesnt appear at all-->
 
-17. the click tracker currently makes an infinte loop of constantly outputting the contents of the arrays.
-function clickTracker (){
+17. <!--the click tracker currently makes an infinte loop of constantly outputting the contents of the arrays.function clickTracker (){
    //function to keep track how many times the buttons are pressed and increase the number variable when the button is pressed
    if
    (Pink()) {
@@ -43,18 +39,18 @@ function clickTracker (){
    (Green()) {number++
       console.log("Green as pressed "+ number +" of times")
    console.log("clickTracker is currently at "+number)}
- if
+   if
       (Blue()) {number++
       console.log("Blue as pressed "+ number +" of times")
    console.log("clickTracker is currently at "+number) }
-else {console.log("No buttons been pressed")}
-}. currently left unused as its not very helpful
+   else {console.log("No buttons been pressed")}
+   currently left unused as its not very helpful
 
-18. the story text is being inplemented in full but with that i am noticing the wrong text appearing and so on, i need to make some if statements of something so the correct array comes, its mainly when the color arrays overlap that causes problems, when i make just pink, pink, pink for example it all works as it should.
+18. <!--the story text is being implemented in full but with that i am noticing the wrong text appearing and so on, i need to make some if statements of something so the correct array comes, its mainly when the color arrays overlap that causes problems, when i make just pink, pink, pink for example it all works as it should.-->
 
-19. 3rd pink else if is giving me problems, the idea is that if green and blue have been pressed once (Greenpressed==1&&Bluepressed==1).
+19. <!--3rd pink else if is giving me problems, the idea is that if green and blue have been pressed once (Greenpressed==1&&Bluepressed==1).-->
 
-20. MAjority of combination of button presses dont give the intended result yet.
+20. <!-- MAjority of combination of button presses dont give the intended result yet.-->
 
 21. <!--else if (BluePressed==1&&PinkPressed==1){
       route=3
@@ -71,7 +67,7 @@ else {console.log("No buttons been pressed")}
       console.log("do a lil dance") 
       both have the same requirements so the first one always shows, need to add another variable or something to fix it.-->
 
-22. The combinations of f.e.x; B+P+P or G+B+B always end up being trouble at the end, the last bit of dialogue either takes over the second or gets swalled by it.
+22. <!--The combinations of f.e.x; B+P+P or G+B+B always end up being trouble at the end, the last bit of dialogue either takes over the second or gets swalled by it.-->
 
 
 # Fixed Bug List
@@ -109,11 +105,15 @@ into the function for the text box, buuut now i cant access the name variable si
 
 15. fixed by redefining route to = 1 again before the rest happens
 
-16.
+16. I've not been keeping track to update the bug list as i should. But i most likely fixed it by changing the conditions for the if and else ifs before it.
 
-17.
+17. Chnaged the use for the number variable and instead made a new variable called counter specifically to "count" how many button presses thes been.
+
+18. it was a long arduous but interesting process trying to fix this. put the full story in, wrote down all possible button combinations i could think of(27) and then went through every one of them and whenever i encountered problem i fixed it and tried it to see it worked and then moved onto the next. I made an else if for every specific combination so the correct text would appear. 
 
 19. had putten the PinkPressed++ on the 4th instead of 3rd. Got a lot of "bugs" from naming things 3rd, 4th etc multiple times, so now ive renamed the console log markers as what the action is suposed to be
-20. Currently at 6 out of 27 fixed
+20. All 27 have been checked and work as intended now.
 
 21. Made 3 more variables called MAZE, CORPSE and STATUE. if the first button is blue it adds 1 to CORPSE, if the first button pressed is Pink it adds 1 to STATUE and so on. and then i added the requirement to the else ifs with the same conditions but different outcomes to differentiate them.
+
+22. Made variables that serve as conditions for the choices that had the same combinations. green && blue and blue&& green are seen as the same by the program but by adding a variable based on the door the user pressed first there are no mixups.
